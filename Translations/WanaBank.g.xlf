@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="WanaBank">
+    <body>
+      <group id="body">
+        <trans-unit id="Page 386230417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data Exchange Field Details</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wanaData Exch Field Details - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bank Account - Trial Balance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - NamedType 1290543826" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amounts in LCY</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - NamedType AmtsinLCYCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - NamedType 684809554" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - NamedType CurrReportPageNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - NamedType 1617667251" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bank Account - Trial Balance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - NamedType CustTrialBalanceCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - NamedType 3555156106" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fiscal Year-To-Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - NamedType FiscalYearToDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - NamedType 3167210143" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only includes bank accounts with entries in the period</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - NamedType inclcustentriesinperiodCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - NamedType 2171017903" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Net Change</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - NamedType NetChangeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - NamedType 2716332507" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - NamedType PeriodCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>It was not possible to find a %1 in %2.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period: %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total for</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Group Totals: %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - NamedType 1537753689" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total in LCY</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - NamedType TotalinLCYCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - NamedType 3058314049" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Balance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - NamedType YTDTotalCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - ReportLabel 935578558" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Beginning Balance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - ReportLabel PeriodBeginBalanceCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - ReportLabel 2122377922" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - ReportLabel PeriodCreditAmtCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 4109098916 - ReportLabel 1880035215" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Debit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - ReportLabel PeriodDebitAmtCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 3617303693 - NamedType 1565068053" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account Balance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account Reconcil. - NamedType tAccountBalance</note>
+        </trans-unit>
+        <trans-unit id="Report 3617303693 - NamedType 2051573752" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bank Balance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account Reconcil. - NamedType tBankBalance</note>
+        </trans-unit>
+        <trans-unit id="Report 3617303693 - NamedType 2127647033" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account Reconcil. - NamedType tPage</note>
+        </trans-unit>
+        <trans-unit id="Report 3617303693 - NamedType 1759999508" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account Reconcil. - NamedType tPostingDate</note>
+        </trans-unit>
+        <trans-unit id="Report 3617303693 - NamedType 3878740627" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open Entries Sum</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account Reconcil. - NamedType tSumOpenEntries</note>
+        </trans-unit>
+        <trans-unit id="Report 3617303693 - ReportLabel 1440380952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account Reconcil. - ReportLabel TotalCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 3617303693 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account Reconcil. - Control PostingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2426992673 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Bank Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wanaBank Import CFONB120 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2252989391 - Action 533723348 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4226890118">
+          <source>Import CFONB120</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wanaBank Payment Reconcil Jnls - Action ImportCFONB120 - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
