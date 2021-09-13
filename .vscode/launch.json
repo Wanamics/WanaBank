@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Wanamics Sandbox",
+      "request": "launch",
+      "type": "al",
+      "server": "https://businesscentral.dynamics.com/",
+      "environmentType": "Sandbox",
+      "environmentName": "Sandbox",
+      "tenant": "e58e4362-4ba1-46f8-b9da-326a8fa42dc7",
+      "port": 7049,
+      "authentication": "AAD",
+      "startupObjectId": 1294,
+      "startupObjectType": "Page",
+      "breakOnError": true,
+      "launchBrowser": true,
+      "enableLongRunningSqlStatements": true,
+      "enableSqlInformationDebugger": true
+  }
+]
+}
