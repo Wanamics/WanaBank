@@ -1,2 +1,2 @@
 # WanaBank
-Import CFONB files
+Import CFONB files to Dynamics Business Central
