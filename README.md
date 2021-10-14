@@ -15,3 +15,4 @@ Outre l’import des lignes proprement dites, les commentaires souvent utiles au
 De plus, un état de rapprochement vous permettra d’analyser les écritures non rapprochées pour justifier l’écart entre le solde du compte bancaire de Business Central et celui de votre relevé.
 
 Enfin, s’il vous arrive encore de recevoir des règlements par chèques, vous trouverez un bordereau de remise amélioré.
+https://www.wanamics.fr/importez-vos-releves-bancaires/
