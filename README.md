@@ -1,7 +1,4 @@
 # WanaBank
-Import CFONB files to Dynamics Business Central
-
-
 Business Central dispose d’une fonctionnalité de rapprochement bancaire,
 dont l’efficacité a bien progressé de version en version, mais il reste une
 lacune incompréhensible pour les utilisateurs de la version française :
