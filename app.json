@@ -2,22 +2,15 @@
   "id": "b1cd6680-be5f-4f76-b1f3-bcc213c5558f",
   "name": "WanaBank",
   "publisher": "Wanamics",
-  "version": "18.4.0.0",
+  "version": "19.0.0.4",
   "logo": "Wanamics90x90.png",
-  "runtime": "7.0",
-  "showMyCode": true,
+  "runtime": "8.0",
+  "resourceExposurePolicy": {"allowDebugging": true, "allowDownloadingSource": true, "includeSourceInSymbolFile": true},
   "target": "Cloud",
-  "platform": "18.0.28593.29123",
+  "platform": "19.0.0.0",
+  "application": "19.0.0.0",
   "contextSensitiveHelpUrl": "https://www.wanamics.fr/support/",
   "features": [
-  ],
-  "dependencies": [
-    {
-      "id": "c1335042-3002-4257-bf8a-75c898ccb1b8",
-      "name": "Application",
-      "version": "18.4.0.0",
-      "publisher": "Microsoft"
-    }
   ],
   "idRanges": [
     {
