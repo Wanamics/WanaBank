@@ -5,7 +5,7 @@ codeunit 81601 "wan Bank Account Rec. Events"
     var
         CantBeBankAccountNoErr: TextConst ENU = 'can''t be the same bank account No.', FRA = 'doit être différent du compte bancaire';
     begin
-        if (Rec."Account Type" = Rec."Account Type"::"Bank Account") and (Rec."Account No." = Rec."Bank Account No.") then
+        if (CurrFieldNo = Rec.Fieldno("Account No.")) and (Rec."Account Type" = Rec."Account Type"::"Bank Account") and (Rec."Account No." = Rec."Bank Account No.") then
             Rec.FieldError("Account No.", CantBeBankAccountNoErr);
     end;
 
@@ -15,4 +15,11 @@ codeunit 81601 "wan Bank Account Rec. Events"
         if GenJournalLine.Description = '' then
             GenJournalLine.Description := BankAccReconciliationLine."Transaction Text";
     end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Bank Acc. Reconciliation Post", 'OnBeforePost', '', false, false)]
+    local procedure OnBeforePost(var BankAccReconciliation: Record "Bank Acc. Reconciliation"; var BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line")
+    begin
+        BankAccReconciliation.TestField("Statement Date");
+    end;
+
 }

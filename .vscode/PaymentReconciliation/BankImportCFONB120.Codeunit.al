@@ -4,15 +4,19 @@ codeunit 81600 "wanaBank Import CFONB120"
 
     trigger OnRun()
     begin
-        ImportBankAccountReconciliation(rec);
+        ImportBankAccountReconciliation(Rec, '');
     end;
 
-    local procedure ImportBankAccountReconciliation(var Rec: Record "Bank Acc. Reconciliation")
+    procedure ImportBankAccountReconciliation(var Rec: Record "Bank Acc. Reconciliation"; pCompanyName: Text)
     var
         TempBankAccReconciliation: Record "Bank Acc. Reconciliation" temporary;
+        ImportCFONB120: XmlPort "wanaBank Import CFONB120 Multi";
     begin
         Fill(TempBankAccReconciliation);
-        Xmlport.Run(Xmlport::"wanaBank Import CFONB120", false, true);
+        if pCompanyName = '' then
+            Xmlport.Run(Xmlport::"wanaBank Import CFONB120 multi", false, true)
+        else
+            ImportCFONB120.ThisCompanyOnly();
         if Rec.FindSet() then
             repeat
                 if not TempBankAccReconciliation.GET(Rec."Statement Type", rec."Bank Account No.", Rec."Statement No.") then

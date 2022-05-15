@@ -1,9 +1,9 @@
-xmlport 81600 "wanaBank Import CFONB120"
+xmlport 81601 "wanaBank Import CFONB120 Multi"
 {
     // Quid s'il existe déjà un relevé pour le même compte (erreur ou compléter ?)
     // Quid si compte n'existe pas, skip ou erreur ?
     // Contrôle date début > celle du dernier relevé (ou skip si <=)
-    Caption = 'Import Bank Entries';
+    CaptionML = ENU = 'Import Bank Statement', FRA = 'Import relevé bancaire';
     Direction = Import;
     Format = FixedText;
     FormatEvaluate = Legacy;
@@ -13,8 +13,7 @@ xmlport 81600 "wanaBank Import CFONB120"
     {
         textelement(Root)
         {
-            tableelement(Table2000000026;
-            2000000026)
+            tableelement(Integer; Integer)
             {
                 AutoReplace = false;
                 AutoSave = false;
@@ -128,11 +127,19 @@ xmlport 81600 "wanaBank Import CFONB120"
     }
     trigger OnPreXmlPort()
     begin
-        GeneralLedgerSetup.Get();
-        DataExch.Insert(true);
+        FillCompanyBankAccountBuf();
+        //GeneralLedgerSetup.Get();
+        //DataExch.Insert(true);
+    end;
+
+    trigger OnPostXmlPort()
+    begin
+        CompanyBankAccountBuf.SetFilter("Last Payment Statement No.", '<>%1', '');
+        page.RunModal(Page::"wan Company Bank Statements", CompanyBankAccountBuf);
     end;
 
     var
+        CompanyBankAccountBuf: Record "wan Company Bank Account Buf.";
         BankAccount: Record "Bank Account";
         BankAccReconciliation: Record "Bank Acc. Reconciliation";
         BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line";
@@ -142,34 +149,45 @@ xmlport 81600 "wanaBank Import CFONB120"
         DataExch: Record "Data Exch.";
 
     local procedure GetBankAccount(): Boolean
+    /*
+    var
+        CurrencyErr : TextConst
+            ENU = 'Foreign Currency not allowed',
+            FRA = 'Devise étrangère non prise en charge par ce traitement'
+    */
     begin
-        if (_BankBranchNo = CopyStr(DelChr(BankAccount.IBAN), 10, 5)) AND (_BankAccountNo = CopyStr(DelChr(BankAccount.IBAN), 15, 11)) then
+        if (_BankBranchNo = CompanyBankAccountBuf."Bank Branch No.") AND (_BankAccountNo = CompanyBankAccountBuf."Bank Account No.") then
             exit;
-        if BankAccount.FindSet() then
-            repeat
-            until (BankAccount.Next() = 0) OR (_BankBranchNo = CopyStr(DelChr(BankAccount.IBAN), 10, 5)) AND (_BankAccountNo = CopyStr(DelChr(BankAccount.IBAN), 15, 11));
-        if (_BankBranchNo <> CopyStr(DelChr(BankAccount.IBAN), 10, 5)) OR (_BankAccountNo <> CopyStr(DelChr(BankAccount.IBAN), 15, 11)) then
-            clear(BankAccount)
-        else
+        if not CompanyBankAccountBuf.Get(_BankBranchNo, _BankAccountNo) then
+            Clear(CompanyBankAccountBuf)
+        else begin
+            //if CompanyBankAccountBuf."Company Name" <> CompanyName then begin
+            GeneralLedgerSetup.ChangeCompany(CompanyBankAccountBuf."Company Name");
+            GeneralLedgerSetup.Get();
+            BankAccount.ChangeCompany(CompanyBankAccountBuf."Company Name");
+            BankAccReconciliation.ChangeCompany(CompanyBankAccountBuf."Company Name");
+            BankAccReconciliationLine.ChangeCompany(CompanyBankAccountBuf."Company Name");
+            DataExch.ChangeCompany(CompanyBankAccountBuf."Company Name");
+            DataExch.Insert(true);
+            //end;
             if _CurrencyCode <> GeneralLedgerSetup."LCY Code" then
-                BankAccount.TestField("Currency Code", _CurrencyCode);
+                Clear(CompanyBankAccountBuf)
+        end;
     end;
 
     local procedure StartingBalance()
     begin
         GetBankAccount;
-        if (BankAccount."No." = BankAccReconciliation."Bank Account No.") or (BankAccount."No." = '') then
+        if (CompanyBankAccountBuf."No." = BankAccReconciliation."Bank Account No.") or (CompanyBankAccountBuf."No." = '') then
             exit;
-        BankAccount.TestField("Balance Last Statement", ToAmount(_Amount, _NoOfDecimals));
+        CompanyBankAccountBuf.TestField("Balance Last Statement", ToAmount(_Amount, _NoOfDecimals));
         Clear(BankAccReconciliation);
-        BankAccReconciliation."Statement Type" := BankAccReconciliation."Statement Type"::"Payment Application";
-        BankAccReconciliation.Validate("Bank Account No.", BankAccount."No.");
-        BankAccReconciliation.Insert(true);
+        BankAccReconciliationInsert(BankAccReconciliation."Statement Type"::"Payment Application");
     end;
 
     local procedure Operation()
     begin
-        if BankAccount."No." = '' then
+        if CompanyBankAccountBuf."No." = '' then
             exit;
         BankAccReconciliationLine.Init();
         BankAccReconciliationLine."Statement Type" := BankAccReconciliation."Statement Type";
@@ -192,7 +210,7 @@ xmlport 81600 "wanaBank Import CFONB120"
     var
         DataExchField: Record "Data Exch. Field";
     begin
-        if BankAccount."No." = '' then
+        if CompanyBankAccountBuf."No." = '' then
             exit;
         DetailLineNo += 1;
         DataExchField.InsertRec(DataExch."Entry No.", LineNo, DetailLineNo, _Description, '');
@@ -200,7 +218,7 @@ xmlport 81600 "wanaBank Import CFONB120"
 
     local procedure EndingBalance()
     begin
-        if BankAccount."No." = '' then
+        if CompanyBankAccountBuf."No." = '' then
             exit;
         Evaluate(BankAccReconciliation."Statement Date", _OperationDate);
         BankAccReconciliation."Statement Ending Balance" := ToAmount(_Amount, _NoOfDecimals);
@@ -222,6 +240,104 @@ xmlport 81600 "wanaBank Import CFONB120"
                 exit(ReturnValue / 100);
             '3':
                 exit(ReturnValue / 1000);
+        end;
+    end;
+
+    local procedure FillCompanyBankAccountBuf()
+    var
+        Company: Record Company;
+    begin
+        if Company.FindSet() then
+            repeat
+                FillCompanyBankAccountBufForCompany(Company.Name);
+            until Company.Next() = 0;
+    end;
+
+    internal procedure ThisCompanyOnly()
+    begin
+        FillCompanyBankAccountBufForCompany(CompanyName);
+    end;
+
+    local procedure FillCompanyBankAccountBufForCompany(pCompanyName: Text)
+    var
+        BankAccount: Record "Bank Account";
+        IBANErr: TextConst
+            ENU = 'IBAN is missing for bank account %1 of company %2',
+            FRA = 'IBAN est manquant pour le compte bancaire %1 de la société %2';
+        AlreadyExistsErr: TextConst
+            ENU = 'Bank Account %1 of company %2 and %3 of %4 have the same %5 %6 and %7 %8',
+            FRA = 'Les comptes bancaire % 1 de %2 et %3 de %4 ont les mêmes %5 %6 et %7 %8';
+    begin
+        BankAccount.ChangeCompany(pCompanyName);
+        if BankAccount.FindSet() then
+            repeat
+                if BankAccount.IBAN = '' then
+                    Error(IBANErr, BankAccount."No.", pCompanyName);
+                CompanyBankAccountBuf.TransferFields(BankAccount);
+                CompanyBankAccountBuf.IBAN := DelChr(CompanyBankAccountBuf.IBAN);
+                CompanyBankAccountBuf."Company Name" := pCompanyName;
+                CompanyBankAccountBuf."Bank Branch No." := CopyStr(CompanyBankAccountBuf.IBAN, 10, 5);
+                CompanyBankAccountBuf."Bank Account No." := CopyStr(CompanyBankAccountBuf.IBAN, 15, 11);
+                if CompanyBankAccountBuf.Get(CompanyBankAccountBuf."Bank Branch No.", CompanyBankAccountBuf."Bank Account No.") then
+                    Error(AlreadyExistsErr,
+                        BankAccount."No.", CompanyName,
+                        CompanyBankAccountBuf."No.", CompanyBankAccountBuf."Company Name",
+                        CompanyBankAccountBuf.FieldCaption("Bank Branch No."), CompanyBankAccountBuf."Bank Branch No.",
+                        CompanyBankAccountBuf.FieldCaption("Bank Account No."), CompanyBankAccountBuf."Bank Account No.");
+                CompanyBankAccountBuf."Last Payment Statement No." := '';
+                CompanyBankAccountBuf."Last Statement No." := '';
+                CompanyBankAccountBuf.Insert();
+            until BankAccount.Next() = 0;
+    end;
+
+    local procedure BankAccReconciliationInsert(pStatementType: Option)
+    begin
+        BankAccReconciliation."Statement Type" := pStatementType;
+        BankAccReconciliationValidateBankAccountNo();
+        BankAccReconciliation.Insert(false);
+        CompanyBankAccountBuf."Last Payment Statement No." := BankAccReconciliation."Statement No.";
+        CompanyBankAccountBuf.Modify();
+    end;
+
+    local procedure BankAccReconciliationValidateBankAccountNo()
+    begin
+        // Copy from PerCompany "Bank Acc. Reconciliation Line" table, OnValidate("Bank Account No.")
+        if BankAccReconciliation."Statement No." = '' then begin
+            BankAccount.Get(CompanyBankAccountBuf."Bank Account No.");
+
+            if BankAccReconciliation."Statement Type" = BankAccReconciliation."Statement Type"::"Payment Application" then begin
+                SetLastPaymentStatementNo(BankAccount);
+                BankAccReconciliation."Statement No." := IncStr(BankAccount."Last Payment Statement No.");
+            end else begin
+                SetLastStatementNo(BankAccount);
+                BankAccReconciliation."Statement No." := IncStr(BankAccount."Last Statement No.");
+            end;
+
+            BankAccReconciliation."Balance Last Statement" := BankAccount."Balance Last Statement";
+        end;
+    end;
+
+    local procedure SetLastPaymentStatementNo(var BankAccount: Record "Bank Account")
+    // Copy from PerCompany "Bank Acc. Reconciliation" Table
+    begin
+        if BankAccount."Last Payment Statement No." = '' then begin
+            BankAccReconciliation.SetRange("Bank Account No.", BankAccount."No.");
+            BankAccReconciliation.SetRange("Statement Type", BankAccReconciliation."Statement Type"::"Payment Application");
+            if BankAccReconciliation.FindLast() then
+                BankAccount."Last Payment Statement No." := IncStr(BankAccReconciliation."Statement No.")
+            else
+                BankAccount."Last Payment Statement No." := '0';
+
+            BankAccount.Modify();
+        end;
+    end;
+
+    local procedure SetLastStatementNo(var BankAccount: Record "Bank Account")
+    // Copy from PerCompany "Bank Acc. Reconciliation" Table
+    begin
+        if BankAccount."Last Statement No." = '' then begin
+            BankAccount."Last Statement No." := '0';
+            BankAccount.Modify();
         end;
     end;
 }
