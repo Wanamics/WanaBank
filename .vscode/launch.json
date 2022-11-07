@@ -38,21 +38,40 @@
     "enableSqlInformationDebugger": true
 },
 */
-{
-  "name": "Syneido cloud sandbox",
-  "request": "launch",
-  "server": "https://businesscentral.dynamics.com/",
-  "tenant": "7976175f-bf14-44d1-a0fb-d1307bebb8be",
-  "type": "al",
-  "environmentType": "Sandbox",
-  "environmentName": "Development",
-  "startupObjectType": "Page",
-  "startupObjectId": 1294 ,
-  //"schemaUpdateMode": "ForceSync",
-  "breakOnError": true,
-  "launchBrowser": true,
-  "enableLongRunningSqlStatements": true,
-  "enableSqlInformationDebugger": true
-}
+  {
+    "name": "Syneido cloud sandbox",
+    "request": "launch",
+    "server": "https://businesscentral.dynamics.com/",
+    "tenant": "7976175f-bf14-44d1-a0fb-d1307bebb8be",
+    "type": "al",
+    "environmentType": "Sandbox",
+    "environmentName": "Development",
+  //  "startupObjectType": "Page",
+  //  "startupObjectId": 81601 ,
+    //"schemaUpdateMode": "ForceSync",
+    "breakOnError": true,
+    "launchBrowser": true,
+    "enableLongRunningSqlStatements": true,
+    "enableSqlInformationDebugger": true
+  }
+  /*
+  ,
+  {
+    "name": "Wanamics Canada",
+    "request": "launch",
+    "server": "https://businesscentral.dynamics.com/",
+    "tenant": "7976175f-bf14-44d1-a0fb-d1307bebb8be",
+    "type": "al",
+    "environmentType": "Sandbox",
+    "environmentName": "Canada",
+    "startupObjectType": "Page",
+    //"startupObjectId": 81601 ,
+    //"schemaUpdateMode": "ForceSync",
+    "breakOnError": true,
+    "launchBrowser": true,
+    "enableLongRunningSqlStatements": true,
+    "enableSqlInformationDebugger": true
+  }
+  */
 ]
 }

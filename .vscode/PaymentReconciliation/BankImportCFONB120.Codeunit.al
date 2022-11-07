@@ -12,27 +12,16 @@ codeunit 81600 "wanaBank Import CFONB120"
         TempBankAccReconciliation: Record "Bank Acc. Reconciliation" temporary;
         ImportCFONB120: XmlPort "wanaBank Import CFONB120 Multi";
     begin
-        Fill(TempBankAccReconciliation);
         if pCompanyName = '' then
-            Xmlport.Run(Xmlport::"wanaBank Import CFONB120 multi", false, true)
+            ImportCFONB120.AllCompanies()
         else
-            ImportCFONB120.ThisCompanyOnly();
+            ImportCFONB120.OneCompany();
+        ImportCFONB120.Run();
         if Rec.FindSet() then
             repeat
-                if not TempBankAccReconciliation.GET(Rec."Statement Type", rec."Bank Account No.", Rec."Statement No.") then
+                if not TempBankAccReconciliation.Get(Rec."Statement Type", Rec."Bank Account No.", Rec."Statement No.") then
                     UpdateBankDescription(Rec);
             until Rec.Next() = 0;
-    end;
-
-    local procedure Fill(var pTempRec: Record "Bank Acc. Reconciliation")
-    var
-        lRec: Record "Bank Acc. Reconciliation";
-    begin
-        IF lRec.FindSet() then
-            repeat
-                pTempRec := lRec;
-                pTempRec.Insert();
-            UNTIL lRec.Next() = 0;
     end;
 
     local procedure UpdateBankDescription(var pBankAccReconciliation: Record "Bank Acc. Reconciliation")
@@ -60,7 +49,7 @@ codeunit 81600 "wanaBank Import CFONB120"
                 IF Match(DataExchField.Value) then begin
                     BankAccReconciliationLine."Transaction Text" := DataExchField.Value;
                     BankAccReconciliationLine.Modify;
-                    DataExchField.Value := CopyStr('>' + DataExchField.Value, 1, MAXSTRLEN(DataExchField.Value));
+                    DataExchField.Value := CopyStr('>' + DataExchField.Value, 1, MaxStrLen(DataExchField.Value));
                     DataExchField.Modify;
                     EXIT;
                 end;
@@ -73,7 +62,7 @@ codeunit 81600 "wanaBank Import CFONB120"
     begin
         IF TextToAccountMapping.FindSet then
             repeat
-                IF CopyStr(pValue, 1, STRLEN(TextToAccountMapping."Mapping Text")) = TextToAccountMapping."Mapping Text" then EXIT(true);
-            UNTIL TextToAccountMapping.Next() = 0;
+                if CopyStr(pValue, 1, StrLen(TextToAccountMapping."Mapping Text")) = TextToAccountMapping."Mapping Text" then EXIT(true);
+            until TextToAccountMapping.Next() = 0;
     end;
 }

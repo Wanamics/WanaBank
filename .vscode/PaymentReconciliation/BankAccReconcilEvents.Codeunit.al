@@ -1,9 +1,9 @@
-codeunit 81601 "wan Bank Account Rec. Events"
+codeunit 81601 "wan Bank Acc. Reconcil. Events"
 {
     [EventSubscriber(ObjectType::Table, Database::"Bank Acc. Reconciliation Line", 'OnBeforeValidateEvent', 'Account No.', false, false)]
     local procedure OnBeforeValidateEventAccountNo(var Rec: Record "Bank Acc. Reconciliation Line"; var xRec: Record "Bank Acc. Reconciliation Line"; CurrFieldNo: Integer)
     var
-        CantBeBankAccountNoErr: TextConst ENU = 'can''t be the same bank account No.', FRA = 'doit être différent du compte bancaire';
+        CantBeBankAccountNoErr: Label 'can''t be the same bank account No.';
     begin
         if (CurrFieldNo = Rec.Fieldno("Account No.")) and (Rec."Account Type" = Rec."Account Type"::"Bank Account") and (Rec."Account No." = Rec."Bank Account No.") then
             Rec.FieldError("Account No.", CantBeBankAccountNoErr);

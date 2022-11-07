@@ -8,7 +8,7 @@ pageextension 81604 "wan Journal Line Details FactB" extends "Journal Line Detai
             {
                 ApplicationArea = All;
                 Editable = false;
-                CaptionML = ENU = 'IBAN', FRA = 'IBAN';
+                Caption = 'IBAN';
                 //ShowCaption = false;
             }
         }

@@ -2,20 +2,24 @@
   "id": "b1cd6680-be5f-4f76-b1f3-bcc213c5558f",
   "name": "WanaBank",
   "publisher": "Wanamics",
-  "version": "20.0.0.0",
+  "version": "21.0.0.2",
   "logo": "Wanamics90x90.png",
-  "runtime": "8.0",
-  "resourceExposurePolicy": {"allowDebugging": true, "allowDownloadingSource": true, "includeSourceInSymbolFile": true},
-  "target": "Cloud",
-  "platform": "19.0.0.0",
-  "application": "19.0.0.0",
-  "contextSensitiveHelpUrl": "https://www.wanamics.fr/support/",
-  "features": [
-  ],
-  "idRanges": [
+  "runtime": "10.0",
+  "resourceExposurePolicy": 
     {
-      "from": 81600,
-      "to": 81609
-    }
+      "allowDebugging": true, 
+      "allowDownloadingSource": true, 
+      "includeSourceInSymbolFile": true
+    },
+  "target": "Cloud",
+  "platform": "21.0.0.0",
+  "application": "21.0.0.0",
+  "contextSensitiveHelpUrl": "https://www.wanamics.fr/support/",
+  "idRanges": [
+      {"from":   81600, "to":  81609}
+  ],
+  "features": [
+    "NoImplicitWith",
+    "TranslationFile", "GenerateCaptions"
   ]
 }

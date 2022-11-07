@@ -4,10 +4,10 @@ pageextension 81600 "wanaBank Payment Reconcil Jnl." extends "Payment Reconcilia
     {
         addlast(FactBoxes)
         {
-            part(DataExchDetails;"81600")
+            part(DataExchDetails; "wanaData Exch Field Details")
             {
                 ApplicationArea = All;
-                SubPageLink = "Data Exch. No."=FIELD("Data Exch. Entry No."), "Line No."=FIELD("Data Exch. Line No.");
+                SubPageLink = "Data Exch. No." = Field("Data Exch. Entry No."), "Line No." = Field("Data Exch. Line No.");
             }
         }
     }

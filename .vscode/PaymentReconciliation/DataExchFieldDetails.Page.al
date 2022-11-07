@@ -1,10 +1,10 @@
 page 81600 "wanaData Exch Field Details"
 {
-    Caption = 'Data Exchange Field Details';
+    Caption = 'Bank transaction Details';
     DelayedInsert = true;
     Editable = false;
     PageType = ListPart;
-    SourceTable = 1221;
+    SourceTable = "Data Exch. Field";
 
     layout
     {
@@ -12,7 +12,7 @@ page 81600 "wanaData Exch Field Details"
         {
             repeater(Group)
             {
-                field(Value;rec.Value)
+                field(Value; Rec.Value)
                 {
                     ApplicationArea = All;
                 }

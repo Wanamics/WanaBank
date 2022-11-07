@@ -1,9 +1,9 @@
-report 81600 "wanaBank Account Reconcil."
+report 81600 "wanaBank Acc. Reconcil."
 {
     DefaultLayout = RDLC;
     RDLCLayout = './BankAccountReconciliation.rdl';
     ApplicationArea = All;
-    CaptionML = ENU = 'Bank Account Reconciliation', FRA = 'Rapprochement bancaire';
+    Caption = 'Bank Account Reconciliation';
     UsageCategory = ReportsAndAnalysis;
 
     dataset
@@ -153,7 +153,7 @@ report 81600 "wanaBank Account Reconcil."
                 field(PostingDate; PostingDate)
                 {
                     ApplicationArea = All;
-                    CaptionML = ENU = 'Reconciliation Date', FRA = 'Date rapprochement';
+                    Caption = 'Reconciliation Date';
                 }
             }
         }
@@ -167,13 +167,13 @@ report 81600 "wanaBank Account Reconcil."
     }
     var
         PostingDate: Date;
-        tPage: TextConst ENU = 'Page', FRA = 'Page';
+        tPage: Label 'Page';
         GLAccount: Record "G/L Account";
         BankAccountStatement: Record "Bank Account Statement";
-        tPostingDate: TextConst ENU = 'Reconciliation Date', FRA = 'Date rapprochement';
-        tAccountBalance: TextConst ENU = 'Account Balance', FRA = 'Solde comptable';
-        tSumOpenEntries: TextConst ENU = 'Open Entries Sum', FRA = 'Total non rapproché';
-        tBankBalance: TextConst ENU = 'Bank Balance', FRA = 'Solde bancaire';
+        tPostingDate: Label 'Reconciliation Date';
+        tAccountBalance: Label 'Account Balance';
+        tSumOpenEntries: Label 'Open Entries Sum';
+        tBankBalance: Label 'Bank Balance';
         TotalBalanceAtDate_BankAccPosting: Decimal;
         CurrBankAccountPosting: Code[20];
 }
