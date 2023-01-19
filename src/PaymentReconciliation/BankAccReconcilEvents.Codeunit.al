@@ -24,7 +24,59 @@ codeunit 87401 "wan Bank Acc. Reconcil. Events"
         BankAccReconciliationLine.SetRange("Bank Account No.", BankAccReconciliation."Bank Account No.");
         BankAccReconciliationLine.SetRange("Statement No.", BankAccReconciliation."Statement No.");
         BankAccReconciliationLine.SetCurrentKey("Transaction Date");
-        if BankAccReconciliationLine.FindLast() and (BankAccReconciliation."Statement Date" < BankAccReconciliationLine."Transaction Date") then
-            Message(ImportedLinesAfterStatementDateMsg);
+        if BankAccReconciliationLine.IsEmpty then
+            InsertNullLine(BankAccReconciliation, BankAccReconciliationLine)
+        else
+            if BankAccReconciliationLine.FindLast() and (BankAccReconciliation."Statement Date" < BankAccReconciliationLine."Transaction Date") then
+                Message(ImportedLinesAfterStatementDateMsg);
+    end;
+
+    local procedure InsertNullLine(BankAccReconciliation: Record "Bank Acc. Reconciliation"; var BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line")
+    begin
+        BankAccReconciliationLine.Init();
+        BankAccReconciliationLine."Statement Type" := BankAccReconciliation."Statement Type";
+        BankAccReconciliationLine."Bank Account No." := BankAccReconciliation."Bank Account No.";
+        BankAccReconciliationLine."Statement No." := BankAccReconciliation."Statement No.";
+        BankAccReconciliationLine."Transaction Date" := BankAccReconciliation."Statement Date";
+        BankAccReconciliationLine."Account Type" := BankAccReconciliationLine."Account Type"::"Bank Account";
+        BankAccReconciliationLine."Account No." := BankAccReconciliation."Bank Account No.";
+        BankAccReconciliationLine.Insert();
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Bank Acc. Reconciliation", 'OnBeforeDeleteEvent', '', false, false)]
+    local procedure OnBeforeDeleteEvent(var Rec: Record "Bank Acc. Reconciliation")
+    var
+        lRec: Record "Bank Acc. Reconciliation";
+        MustBeTheLastOneErr: Label 'must be the last one for this bank account';
+        BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line";
+    begin
+        if Rec.IsTemporary then
+            exit;
+        BankAccReconciliationLine.SetRange("Statement Type", Rec."Statement Type");
+        BankAccReconciliationLine.SetRange("Bank Account No.", Rec."Bank Account No.");
+        BankAccReconciliationLine.SetRange("Statement No.", Rec."Statement No.");
+        if BankAccReconciliationLine.IsEmpty then
+            exit;
+        lRec.SetCurrentKey("Statement Type", "Bank Account No.", "Statement Date");
+        lRec.SetRange("Statement Type", Rec."Statement Type");
+        lRec.SetRange("Bank Account No.", Rec."Bank Account No.");
+        if lRec.FindLast() and (lRec."Statement No." <> Rec."Statement No.") then
+            Rec.FieldError("Statement Date", MustBeTheLastOneErr);
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Bank Acc. Recon. Post (Yes/No)", 'OnBeforeBankAccReconPostYesNo', '', false, false)]
+    //local procedure OnBeforeInvokePost(BankAccReconciliation: Record "Bank Acc. Reconciliation")
+    local procedure OnBeforeBankAccReconPostYesNo(var BankAccReconciliation: Record "Bank Acc. Reconciliation"; var Result: Boolean; var Handled: Boolean)
+    var
+        lRec: Record "Bank Acc. Reconciliation";
+        MustBeTheFirstOneErr: Label 'must be the first one for this bank account';
+    begin
+        if BankAccReconciliation.IsTemporary then
+            exit;
+        lRec.SetCurrentKey("Statement Type", "Bank Account No.", "Statement Date");
+        lRec.SetRange("Statement Type", BankAccReconciliation."Statement Type");
+        lRec.SetRange("Bank Account No.", BankAccReconciliation."Bank Account No.");
+        if lRec.FindFirst() and (lRec."Statement No." <> BankAccReconciliation."Statement No.") then
+            BankAccReconciliation.FieldError("Statement Date", MustBeTheFirstOneErr);
     end;
 }
