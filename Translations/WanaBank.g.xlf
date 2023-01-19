@@ -3,40 +3,55 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="WanaBank">
     <body>
       <group id="body">
-        <trans-unit id="Table 3697680955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2137012 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>MultiComp. Bank Account</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan MultiComp. Bank Account - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Company Bank Account - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3697680955 - Field 1622979514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2137012 - Field 1622979514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan MultiComp. Bank Account - Field Account No. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Company Bank Account - Field Account No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3697680955 - Field 3997336476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2137012 - Field 3997336476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Company Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan MultiComp. Bank Account - Field Company Name - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Company Bank Account - Field Company Name - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3697680955 - Field 4198939294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2137012 - Field 4198939294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Currency Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan MultiComp. Bank Account - Field Currency Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Company Bank Account - Field Currency Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3697680955 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2137012 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan MultiComp. Bank Account - Field Name - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Company Bank Account - Field Name - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3697680955 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2137012 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan MultiComp. Bank Account - Field No. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Company Bank Account - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4250744797 - Method 4254706052 - NamedType 1965274455" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are lines on the imported bank statement with dates that are after the statement date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Bank Acc. Reconcil. Events - Method OnBeforePost - NamedType ImportedLinesAfterStatementDateMsg</note>
         </trans-unit>
         <trans-unit id="Codeunit 4250744797 - Method 3506521230 - NamedType 2638570128" size-unit="char" translate="yes" xml:space="preserve">
           <source>can't be the same bank account No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Bank Acc. Reconcil. Events - Method OnBeforeValidateEventAccountNo - NamedType CantBeBankAccountNoErr</note>
+        </trans-unit>
+        <trans-unit id="Page 1180670980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test XMLDocument</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Test XMLDocument - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1180670980 - Action 922542796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TestXMLDocument</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Test XMLDocument - Action TestXMLDocument - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4004623534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bank Account Reconcil. per Company</source>
@@ -93,55 +108,55 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page wan Companies Bank Reconcil. - Action EditJournal - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 386230417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3096281778 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bank transaction Details</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page wanaData Exch Field Details - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Data Exch Field Details - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1985034320 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bank Account Reconciliation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Bank Acc. Reconcil. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1985034320 - NamedType 1565068053" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account Balance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Bank Acc. Reconcil. - NamedType tAccountBalance</note>
+        </trans-unit>
+        <trans-unit id="Report 1985034320 - NamedType 2051573752" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bank Balance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Bank Acc. Reconcil. - NamedType tBankBalance</note>
+        </trans-unit>
+        <trans-unit id="Report 1985034320 - NamedType 2127647033" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Bank Acc. Reconcil. - NamedType tPage</note>
+        </trans-unit>
+        <trans-unit id="Report 1985034320 - NamedType 1759999508" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reconciliation Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Bank Acc. Reconcil. - NamedType tPostingDate</note>
+        </trans-unit>
+        <trans-unit id="Report 1985034320 - NamedType 3878740627" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open Entries Sum</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Bank Acc. Reconcil. - NamedType tSumOpenEntries</note>
+        </trans-unit>
+        <trans-unit id="Report 1985034320 - ReportLabel 1440380952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Bank Acc. Reconcil. - ReportLabel TotalCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 1985034320 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reconciliation Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Bank Acc. Reconcil. - Control PostingDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 690047454 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>SEPA Direct Debit Mandate</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan SEPA Direct Debit Mandate - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2737043311 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bank Account Reconciliation</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Acc. Reconcil. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2737043311 - NamedType 1565068053" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account Balance</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Acc. Reconcil. - NamedType tAccountBalance</note>
-        </trans-unit>
-        <trans-unit id="Report 2737043311 - NamedType 2051573752" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bank Balance</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Acc. Reconcil. - NamedType tBankBalance</note>
-        </trans-unit>
-        <trans-unit id="Report 2737043311 - NamedType 2127647033" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Page</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Acc. Reconcil. - NamedType tPage</note>
-        </trans-unit>
-        <trans-unit id="Report 2737043311 - NamedType 1759999508" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reconciliation Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Acc. Reconcil. - NamedType tPostingDate</note>
-        </trans-unit>
-        <trans-unit id="Report 2737043311 - NamedType 3878740627" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Open Entries Sum</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Acc. Reconcil. - NamedType tSumOpenEntries</note>
-        </trans-unit>
-        <trans-unit id="Report 2737043311 - ReportLabel 1440380952" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Total</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Acc. Reconcil. - ReportLabel TotalCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 2737043311 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reconciliation Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Acc. Reconcil. - Control PostingDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4109098916 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bank Account - Trial Balance</source>
@@ -228,45 +243,70 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - ReportLabel PeriodDebitAmtCaption</note>
         </trans-unit>
-        <trans-unit id="XmlPort 888450362 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="XmlPort 4105962708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test XMLDocument Datatype</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort Test XMLDocument Datatype - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 580001984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Import Bank Statement</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wanaBank Import CFONB120 Multi - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="XmlPort 888450362 - Method 2418344728 - NamedType 2126343653" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="XmlPort 580001984 - Method 2418344728 - NamedType 2126343653" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bank Account %1 of company %2 and %3 of %4 have the same %5 %6 and %7 %8</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wanaBank Import CFONB120 Multi - Method FillMultiCompBankAccountForCompany - NamedType AlreadyExistsErr</note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method FillMultiCompBankAccountForCompany - NamedType AlreadyExistsErr</note>
         </trans-unit>
-        <trans-unit id="XmlPort 888450362 - Method 1069624050 - NamedType 3475688240" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="XmlPort 580001984 - Method 1069624050 - NamedType 3475688240" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 for bank account %2 of company %3 must be %4</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wanaBank Import CFONB120 Multi - Method StartingBalance - NamedType BalanceLastStatementErr</note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType BalanceLastStatementErr</note>
         </trans-unit>
-        <trans-unit id="XmlPort 888450362 - Method 1069624050 - NamedType 3896357331" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="XmlPort 580001984 - Method 1069624050 - NamedType 3896357331" size-unit="char" translate="yes" xml:space="preserve">
           <source>Last reconciliation %1 for bank account %2 of company %3 must be %4</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wanaBank Import CFONB120 Multi - Method StartingBalance - NamedType LastBankAccReconciliationBalanceErr</note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType LastBankAccReconciliationBalanceErr</note>
         </trans-unit>
-        <trans-unit id="XmlPort 888450362 - Method 1069624050 - NamedType 2983779794" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="XmlPort 580001984 - Method 1069624050 - NamedType 2983779794" size-unit="char" translate="yes" xml:space="preserve">
           <source>do not match the starting date of new statement of company %1</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wanaBank Import CFONB120 Multi - Method StartingBalance - NamedType BankStatementDateMismatchErr</note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType BankStatementDateMismatchErr</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1038286482 - NamedType 1965274455" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1038286482">
-          <source>There are lines on the imported bank statement with dates that are after the statement date.</source>
+        <trans-unit id="XmlPort 1750104653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SEPA CT pain.001.001.03</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Bank Acc. Reconciliation - NamedType ImportedLinesAfterStatementDateMsg</note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan SEPA CT pain.001.001.03 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1038286482 - NamedType 1410573879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1038286482">
-          <source>The bank account reconciliation does not have a statement date. %1 is the latest date on a line. Do you want to use that date for the statement?</source>
-          <note from="Developer" annotates="general" priority="2">%1 - statement date</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Bank Acc. Reconciliation - NamedType StatementDateEmptyMsg</note>
+        <trans-unit id="XmlPort 1750104653 - NamedType 1486195221" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is no data to export.</source>
+          <note from="Developer" annotates="general" priority="2">%1=Field;%2=Value;%3=Value</note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan SEPA CT pain.001.001.03 - NamedType NoDataToExportErr</note>
         </trans-unit>
         <trans-unit id="PageExtension 3463830577 - Control 4139384376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3897649796">
           <source>IBAN</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Journal Line Details FactB - Control wanIBAN - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 713557453 - NamedType 438128090" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 713557453">
+          <source>Remittance Advice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Journal - NamedType RemittanceAdviceTxt</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 713557453 - Action 152691430 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3196174509">
+          <source>Send the remittance advice before posting a payment journal or after posting a payment. The advice contains vendor invoice numbers, which helps vendors to perform reconciliations.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Journal - Action wanSendRemittanceAdvice - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 713557453 - Action 152691430 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3196174509">
+          <source>Send Remittance Advice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Journal - Action wanSendRemittanceAdvice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 732080047 - Action 4113484412 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4226890118">
+          <source>Import CFONB120</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Reconcil. Journals - Action wanImportCFONB120 - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3608883083 - Action 346897627 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2857567339">
           <source>Print</source>
@@ -278,10 +318,150 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan SEPA Direct Debit Mandates - Control Attached Documents - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 2252989391 - Action 4113484412 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4226890118">
-          <source>Import CFONB120</source>
+        <trans-unit id="PageExtension 3485660885 - NamedType 438128090" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3485660885">
+          <source>Remittance Advice</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wanaBank Payment Reconcil Jnls - Action wanImportCFONB120 - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Vendor Ledger Entries - NamedType RemittanceAdviceTxt</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3485660885 - Action 152691430 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1567633909">
+          <source>Send the remittance advice before posting a payment journal or after posting a payment. The advice contains vendor invoice numbers, which helps vendors to perform reconciliations.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Vendor Ledger Entries - Action wanSendRemittanceAdvice - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3485660885 - Action 152691430 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1567633909">
+          <source>Send Remittance Advice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Vendor Ledger Entries - Action wanSendRemittanceAdvice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4287475235 - NamedType 231594876" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 4287475235">
+          <source>Initial Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Entries - NamedType InitialAmountLbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4287475235 - NamedType 2932303104" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 4287475235">
+          <source>Paid amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Entries - NamedType PaymentAmountLbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4287475235 - NamedType 1344552587" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 4287475235">
+          <source>Pmt. Disc. Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Entries - NamedType PaymentDiscountAmountLbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4287475235 - NamedType 2986351538" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 4287475235">
+          <source>to your bank account:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Entries - NamedType RecipientBankAccountLbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4287475235 - NamedType 4282925696" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 4287475235">
+          <source>Remittance advice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Entries - NamedType RemittanceAdviceLbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4287475235 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 1122946107">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Entries - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4287475235 - Control 506008736 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 1122946107">
+          <source>Email Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Entries - Control EmailOptions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4287475235 - Control 3593006799 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 1122946107">
+          <source>Specifies that amounts remaining to be paid will be included.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Entries - Control PrintMissingAddresses - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4287475235 - Control 3593006799 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 1122946107">
+          <source>Print remaining statements</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Entries - Control PrintMissingAddresses - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4287475235 - Control 2940384201 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 1122946107">
+          <source>Output Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Entries - Control OutputOptions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4287475235 - Control 2118179044 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 1122946107">
+          <source>Specifies how the electronic payment is exported.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Entries - Control OutputMethod - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4287475235 - Control 2118179044 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 1122946107">
+          <source>Output Method</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Entries - Control OutputMethod - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4287475235 - Control 2118179044 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 1122946107">
+          <source>Print,Preview,PDF,Email,Word,XML - RDLC layouts only</source>
+          <note from="Developer" annotates="general" priority="2">Verbs - to print, to preview, to export to PDF, to email, to export to word, to export to XML (with note that it's for RDLC layouts only)</note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Entries - Control OutputMethod - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4004858678 - NamedType 231594876" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 4004858678">
+          <source>Initial Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Journal - NamedType InitialAmountLbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4004858678 - NamedType 2932303104" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 4004858678">
+          <source>Paid amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Journal - NamedType PaymentAmountLbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4004858678 - NamedType 1344552587" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 4004858678">
+          <source>Pmt. Disc. Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Journal - NamedType PaymentDiscountAmountLbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4004858678 - NamedType 2986351538" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 4004858678">
+          <source>to your bank account:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Journal - NamedType RecipientBankAccountLbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4004858678 - NamedType 4282925696" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 4004858678">
+          <source>Remittance advice</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Journal - NamedType RemittanceAdviceLbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4004858678 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 3620084558">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Journal - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4004858678 - Control 506008736 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 3620084558">
+          <source>Email Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Journal - Control EmailOptions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4004858678 - Control 3593006799 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 3620084558">
+          <source>Specifies that amounts remaining to be paid will be included.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Journal - Control PrintMissingAddresses - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4004858678 - Control 3593006799 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 3620084558">
+          <source>Print remaining statements</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Journal - Control PrintMissingAddresses - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4004858678 - Control 2940384201 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 3620084558">
+          <source>Output Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Journal - Control OutputOptions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4004858678 - Control 2118179044 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 3620084558">
+          <source>Specifies how the electronic payment is exported.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Journal - Control OutputMethod - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4004858678 - Control 2118179044 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 3620084558">
+          <source>Output Method</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Journal - Control OutputMethod - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 4004858678 - Control 2118179044 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 3620084558">
+          <source>Print,Preview,PDF,Email,Word,XML - RDLC layouts only</source>
+          <note from="Developer" annotates="general" priority="2">Verbs - to print, to preview, to export to PDF, to email, to export to word, to export to XML (with note that it's for RDLC layouts only)</note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Journal - Control OutputMethod - Property OptionCaption</note>
         </trans-unit>
       </group>
     </body>

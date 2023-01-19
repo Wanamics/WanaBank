@@ -46,32 +46,49 @@
     "type": "al",
     "environmentType": "Sandbox",
     "environmentName": "Development",
-  //  "startupObjectType": "Page",
-  //  "startupObjectId": 81601 ,
+    "startupObjectType": "Page",
+    "startupObjectId":  87402,
+    //"schemaUpdateMode": "ForceSync",
+    "breakOnError": "ExcludeTry",
+    "launchBrowser": true,
+    "enableLongRunningSqlStatements": true,
+    "enableSqlInformationDebugger": true
+  }
+ /*
+  ,
+  {
+    "name": "Wanamics Development",
+    "request": "launch",
+    "server": "https://businesscentral.dynamics.com/",
+    "tenant": "e58e4362-4ba1-46f8-b9da-326a8fa42dc7",
+    "type": "al",
+    "environmentType": "Sandbox",
+    "environmentName": "Development",
+    "startupObjectType": "Page",
+    //"startupObjectId":  87401 ,
     //"schemaUpdateMode": "ForceSync",
     "breakOnError": true,
     "launchBrowser": true,
     "enableLongRunningSqlStatements": true,
     "enableSqlInformationDebugger": true
   }
-  /*
-  ,
+,
   {
     "name": "Wanamics Canada",
     "request": "launch",
     "server": "https://businesscentral.dynamics.com/",
-    "tenant": "7976175f-bf14-44d1-a0fb-d1307bebb8be",
+    "tenant": "e58e4362-4ba1-46f8-b9da-326a8fa42dc7",
     "type": "al",
     "environmentType": "Sandbox",
     "environmentName": "Canada",
     "startupObjectType": "Page",
-    //"startupObjectId": 81601 ,
+    "startupObjectId":  87402 ,
     //"schemaUpdateMode": "ForceSync",
     "breakOnError": true,
     "launchBrowser": true,
     "enableLongRunningSqlStatements": true,
     "enableSqlInformationDebugger": true
   }
-  */
+*/
 ]
 }
