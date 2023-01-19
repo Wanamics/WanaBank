@@ -268,16 +268,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType BankStatementDateMismatchErr</note>
         </trans-unit>
-        <trans-unit id="XmlPort 1750104653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>SEPA CT pain.001.001.03</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan SEPA CT pain.001.001.03 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="XmlPort 1750104653 - NamedType 1486195221" size-unit="char" translate="yes" xml:space="preserve">
-          <source>There is no data to export.</source>
-          <note from="Developer" annotates="general" priority="2">%1=Field;%2=Value;%3=Value</note>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan SEPA CT pain.001.001.03 - NamedType NoDataToExportErr</note>
-        </trans-unit>
         <trans-unit id="PageExtension 3463830577 - Control 4139384376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3897649796">
           <source>IBAN</source>
           <note from="Developer" annotates="general" priority="2"></note>
