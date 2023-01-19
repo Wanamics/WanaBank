@@ -1,7 +1,7 @@
 report 87401 "wanaBank Account - Trial Bal."
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './BankAccountTrialBalance.rdl';
+    RDLCLayout = './BankAccountTrialBalance/BankAccountTrialBalance.rdl';
     ApplicationArea = Basic, Suite;
     Caption = 'Bank Account - Trial Balance';
     PreviewMode = PrintLayout;
