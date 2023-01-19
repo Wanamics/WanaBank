@@ -1,8 +1,5 @@
 xmlport 87401 "wan Bank Rec. Import CFONB120"
 {
-    // Quid s'il existe déjà un relevé pour le même compte (erreur ou compléter ?)
-    // Quid si compte n'existe pas, skip ou erreur ?
-    // Contrôle date début > celle du dernier relevé (ou skip si <=)
     Caption = 'Import Bank Statement';
     Direction = Import;
     Format = FixedText;
@@ -172,15 +169,16 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
         BankAccountStatement: Record "Bank Account Statement";
         BalanceLastStatementErr: Label '%1 for bank account %2 of company %3 must be %4';
         LastBankAccReconciliationBalanceErr: Label 'Last reconciliation %1 for bank account %2 of company %3 must be %4';
-        BankStatementDateMismatchErr: Label 'do not match the starting date of new statement of company %1';
+        BankStatementDateMismatchErr: Label 'does not match the new statement starting date of company %1';
     begin
         GetBankAccount;
         if (MultiCompBankAccount."No." = BankAccReconciliation."Bank Account No.") or (MultiCompBankAccount."No." = '') then
             exit;
         BankAccReconciliation.ChangeCompany(MultiCompBankAccount."Company Name");
         BankAccReconciliation.SetRange("Bank Account No.", MultiCompBankAccount."No.");
+        BaknAccReconciliation.SetRange("Statement Type", BankAccReconciliation."Statement Type"::"Payment Application");
         if BankAccReconciliation.FindLast() then begin
-            if BankAccReconciliation."Balance Last Statement" <> ToAmount(_Amount, _NoOfDecimals) then
+            if BankAccReconciliation."Statement Ending Balance" <> ToAmount(_Amount, _NoOfDecimals) then
                 Error(LastBankAccReconciliationBalanceErr,
                     BankAccReconciliation.FieldCaption("Balance Last Statement"),
                     BankAccReconciliation."Bank Account No.",
@@ -188,6 +186,7 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
                     ToAmount(_Amount, _NoOfDecimals));
             if BankAccReconciliation."Statement Date" <> ToDate(_OperationDate) then
                 BankAccReconciliation.FieldError("Statement Date", Strsubstno(BankStatementDateMismatchErr, MultiCompBankAccount."Company Name"));
+            BankAccReconciliationInsert(BankAccReconciliation."Statement Ending Balance", IncStr(BankAccReconciliation."Statement No."));
         end else begin
             if BankAccount."Balance Last Statement" <> ToAmount(_Amount, _NoOfDecimals) then
                 Error(BalanceLastStatementErr,
@@ -197,10 +196,12 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
                     ToAmount(_Amount, _NoOfDecimals));
             BankAccountStatement.ChangeCompany(MultiCompBankAccount."Company Name");
             BankAccountStatement.SetRange("Bank Account No.", MultiCompBankAccount."No.");
-            if BankAccountStatement.FindLast() and (BankAccountStatement."Statement Date" <> ToDate(_OperationDate)) then
-                BankAccountStatement.FieldError("Statement Date", Strsubstno(BankStatementDateMismatchErr, MultiCompBankAccount."Company Name"));
+            if BankAccountStatement.FindLast() then
+                if BankAccountStatement."Statement Date" <> ToDate(_OperationDate) then
+                    BankAccountStatement.FieldError("Statement Date", Strsubstno(BankStatementDateMismatchErr, MultiCompBankAccount."Company Name"));
+            BankAccReconciliationInsert(BankAccountStatement."Statement Ending Balance", IncStr(BankAccount."Last Payment Statement No."));
         end;
-        BankAccReconciliationInsert(BankAccReconciliation."Statement Type"::"Payment Application");
+        //BankAccReconciliationInsert(); //(BankAccReconciliation."Statement Type"::"Payment Application");
     end;
 
     local procedure Operation()
@@ -234,8 +235,10 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
 
     local procedure EndingBalance()
     begin
+        /* ??
         if MultiCompBankAccount."No." = '' then
             exit;
+        */
         Evaluate(BankAccReconciliation."Statement Date", _OperationDate);
         BankAccReconciliation."Statement Ending Balance" := ToAmount(_Amount, _NoOfDecimals);
         BankAccReconciliation.Modify(true);
@@ -298,55 +301,14 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
             until BankAccount.Next() = 0;
     end;
 
-    local procedure BankAccReconciliationInsert(pStatementType: Option)
+    local procedure BankAccReconciliationInsert(pBalanceLastStatement: decimal; pNextStatementNo: text);
     begin
         BankAccReconciliation.Init();
-        BankAccReconciliation."Statement Type" := pStatementType;
+        BankAccReconciliation."Statement Type" := BankAccReconciliation."Statement Type"::"Payment Application";
         BankAccReconciliation."Bank Account No." := MultiCompBankAccount."No.";
-        BankAccReconciliationValidateBankAccountNo();
+        BankAccReconciliation."Statement No." := pNextStatementNo;
+        BankAccReconciliation."Balance Last Statement" := pBalanceLastStatement;
         BankAccReconciliation.Insert(false);
     end;
 
-    local procedure BankAccReconciliationValidateBankAccountNo()
-    begin
-        // Copy from PerCompany "Bank Acc. Reconciliation" table, OnValidate("Bank Account No.")
-        if BankAccReconciliation."Statement No." = '' then begin
-            BankAccount.Get(MultiCompBankAccount."No.");
-
-            if BankAccReconciliation."Statement Type" = BankAccReconciliation."Statement Type"::"Payment Application" then begin
-                SetLastPaymentStatementNo(BankAccount);
-                BankAccReconciliation."Statement No." := IncStr(BankAccount."Last Payment Statement No.");
-            end else begin
-                SetLastStatementNo(BankAccount);
-                BankAccReconciliation."Statement No." := IncStr(BankAccount."Last Statement No.");
-            end;
-
-            BankAccReconciliation."Balance Last Statement" := BankAccount."Balance Last Statement";
-        end;
-    end;
-
-
-    local procedure SetLastPaymentStatementNo(var BankAccount: Record "Bank Account")
-    // Copy from PerCompany "Bank Acc. Reconciliation" Table
-    begin
-        if BankAccount."Last Payment Statement No." = '' then begin
-            BankAccReconciliation.SetRange("Bank Account No.", BankAccount."No.");
-            BankAccReconciliation.SetRange("Statement Type", BankAccReconciliation."Statement Type"::"Payment Application");
-            if BankAccReconciliation.FindLast() then
-                BankAccount."Last Payment Statement No." := IncStr(BankAccReconciliation."Statement No.")
-            else
-                BankAccount."Last Payment Statement No." := '0';
-
-            BankAccount.Modify();
-        end;
-    end;
-
-    local procedure SetLastStatementNo(var BankAccount: Record "Bank Account")
-    // Copy from PerCompany "Bank Acc. Reconciliation" Table
-    begin
-        if BankAccount."Last Statement No." = '' then begin
-            BankAccount."Last Statement No." := '0';
-            BankAccount.Modify();
-        end;
-    end;
 }

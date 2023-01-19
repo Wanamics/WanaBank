@@ -33,6 +33,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table wan Company Bank Account - Field No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 4250744797 - Method 107581928 - NamedType 2723982390" size-unit="char" translate="yes" xml:space="preserve">
+          <source>must be the first one for this bank account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Bank Acc. Reconcil. Events - Method OnBeforeBankAccReconPostYesNo - NamedType MustBeTheFirstOneErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4250744797 - Method 1407619943 - NamedType 4137510078" size-unit="char" translate="yes" xml:space="preserve">
+          <source>must be the last one for this bank account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Bank Acc. Reconcil. Events - Method OnBeforeDeleteEvent - NamedType MustBeTheLastOneErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 4250744797 - Method 4254706052 - NamedType 1965274455" size-unit="char" translate="yes" xml:space="preserve">
           <source>There are lines on the imported bank statement with dates that are after the statement date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -42,16 +52,6 @@
           <source>can't be the same bank account No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Bank Acc. Reconcil. Events - Method OnBeforeValidateEventAccountNo - NamedType CantBeBankAccountNoErr</note>
-        </trans-unit>
-        <trans-unit id="Page 1180670980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Test XMLDocument</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Test XMLDocument - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1180670980 - Action 922542796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>TestXMLDocument</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Test XMLDocument - Action TestXMLDocument - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4004623534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bank Account Reconcil. per Company</source>
@@ -243,11 +243,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - ReportLabel PeriodDebitAmtCaption</note>
         </trans-unit>
-        <trans-unit id="XmlPort 4105962708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Test XMLDocument Datatype</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort Test XMLDocument Datatype - Property Caption</note>
-        </trans-unit>
         <trans-unit id="XmlPort 580001984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Import Bank Statement</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -269,7 +264,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType LastBankAccReconciliationBalanceErr</note>
         </trans-unit>
         <trans-unit id="XmlPort 580001984 - Method 1069624050 - NamedType 2983779794" size-unit="char" translate="yes" xml:space="preserve">
-          <source>do not match the starting date of new statement of company %1</source>
+          <source>does not match the new statement starting date of company %1</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType BankStatementDateMismatchErr</note>
         </trans-unit>
