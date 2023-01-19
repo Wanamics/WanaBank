@@ -1,21 +1,20 @@
 {
   "version": "0.2.0",
   "configurations": [
-  /*
     {
-      "name": "Wanamics Sandbox",
+      "name": "LORCA_SCI_PROD",
       "request": "launch",
       "type": "al",
-      "server": "https://businesscentral.dynamics.com/",
-      "environmentType": "Sandbox",
-      "environmentName": "Sandbox",
-      "tenant": "e58e4362-4ba1-46f8-b9da-326a8fa42dc7",
-      "port": 7049,
-      "authentication": "AAD",
-      "startupObjectId": 1294,
+      "environmentType": "OnPrem",
+      "server": "http://srv19-bc.lorca.fr",
+      "serverInstance": "LORCA_SCI",
+      "port": 7249,
+      "authentication": "Windows",
+      "startupObjectId": 22,
       "startupObjectType": "Page",
       "breakOnError": true,
       "launchBrowser": true,
+<<<<<<< HEAD
       "enableLongRunningSqlStatements": true,
       "enableSqlInformationDebugger": true
   },
@@ -92,3 +91,24 @@
 */
 ]
 }
+=======
+      "schemaUpdateMode": "ForceSync"
+    },
+    {
+      "name": "LORCA_SCI_TEST",
+      "request": "launch",
+      "type": "al",
+      "environmentType": "OnPrem",
+      "server": "http://srv19-bc-dev.lorca.fr",
+      "serverInstance": "LORCA_SCI_TEST",
+      "port": 7349,
+      "authentication": "Windows",
+      "startupObjectId": 22,
+      "startupObjectType": "Page",
+      "breakOnError": true,
+      "launchBrowser": true,
+      "schemaUpdateMode": "ForceSync"
+    }
+  ]
+}
+>>>>>>> 6bcbea727bd995841fa0b4235d080aaf694862cd
