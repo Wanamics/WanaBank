@@ -1,6 +1,6 @@
 reportextension 87401 "wan Remittance Advice-Journal" extends "Remittance Advice - Journal"
 {
-    WordLayout = './RemittanceAdvice/RemittanceAdviceJournal.docx';
+    WordLayout = './src/RemittanceAdvice/RemittanceAdviceJournal.docx';
 
     dataset
     {

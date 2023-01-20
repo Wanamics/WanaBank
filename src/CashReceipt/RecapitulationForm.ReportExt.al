@@ -1,6 +1,6 @@
 reportextension 87400 "wan Recapitulation Form" extends "Recapitulation Form" // 10843
 {
-    RDLCLayout = './RecapitulationForm.rdl';
+    RDLCLayout = './src/CashReceipt/RecapitulationForm.rdl';
 
     dataset
     {

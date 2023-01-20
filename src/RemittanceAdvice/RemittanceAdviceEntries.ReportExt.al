@@ -1,6 +1,6 @@
 reportextension 87402 "wan Remittance Advice-Entries" extends "Remittance Advice - Entries"
 {
-    WordLayout = './RemittanceAdvice/RemittanceAdviceEntries.docx';
+    WordLayout = './src/RemittanceAdvice/RemittanceAdviceEntries.docx';
 
     dataset
     {
