@@ -1,77 +1,68 @@
 {
   "version": "0.2.0",
   "configurations": [
-  /*
-  {
-    "name": "GRV Development",
-    "request": "launch",
-    "server": "https://businesscentral.dynamics.com/",
-    "tenant": "504c0cd1-a7ee-4826-aff0-e93458fe586c",
-    "type": "al",
-    "environmentType": "Sandbox",
-    "environmentName": "Development",
-    //"startupObjectId": 50004,
-    //"startupObjectType": "Page",
-
-    "schemaUpdateMode": "ForceSync",
-
-    "breakOnError": true,
-    "launchBrowser": true,
-    "enableLongRunningSqlStatements": true,
-    "enableSqlInformationDebugger": true
-},
-*/
-  {
-    "name": "Syneido cloud sandbox",
-    "request": "launch",
-    "server": "https://businesscentral.dynamics.com/",
-    "tenant": "7976175f-bf14-44d1-a0fb-d1307bebb8be",
-    "type": "al",
-    "environmentType": "Sandbox",
-    "environmentName": "Development",
-    "startupObjectType": "Page",
-    "startupObjectId":  1294,
-    //"schemaUpdateMode": "ForceSync",
-    "breakOnError": "ExcludeTry",
-    "launchBrowser": true,
-    "enableLongRunningSqlStatements": true,
-    "enableSqlInformationDebugger": true
-  }
- /*
-  ,
-  {
-    "name": "Wanamics Development",
-    "request": "launch",
-    "server": "https://businesscentral.dynamics.com/",
-    "tenant": "e58e4362-4ba1-46f8-b9da-326a8fa42dc7",
-    "type": "al",
-    "environmentType": "Sandbox",
-    "environmentName": "Development",
-    "startupObjectType": "Page",
-    //"startupObjectId":  87401 ,
-    //"schemaUpdateMode": "ForceSync",
-    "breakOnError": true,
-    "launchBrowser": true,
-    "enableLongRunningSqlStatements": true,
-    "enableSqlInformationDebugger": true
-  }
-,
-  {
-    "name": "Wanamics Canada",
-    "request": "launch",
-    "server": "https://businesscentral.dynamics.com/",
-    "tenant": "e58e4362-4ba1-46f8-b9da-326a8fa42dc7",
-    "type": "al",
-    "environmentType": "Sandbox",
-    "environmentName": "Canada",
-    "startupObjectType": "Page",
-    "startupObjectId":  87402 ,
-    //"schemaUpdateMode": "ForceSync",
-    "breakOnError": true,
-    "launchBrowser": true,
-    "enableLongRunningSqlStatements": true,
-    "enableSqlInformationDebugger": true
-  }
-*/
-]
+    /*
+      {
+        "name": "BC15 LORCA_DEV",
+        "request": "launch",
+        "type": "al",
+        "environmentType": "OnPrem",
+        "server": "https://srv19-bc-dev.lorca.fr",
+        "serverInstance": "LORCA_DEV_RTC",
+        "port": 7049,
+        "authentication": "Windows",
+        "startupObjectType": "Page",
+        "startupObjectId": 87090,
+        "breakOnError": true,
+        "launchBrowser": true,
+        //"schemaUpdateMode": "ForceSync"
+        "schemaUpdateMode": "Synchronize"
+      },
+      {
+        "name": "BC18_LORCA2_DEV",
+        "request": "launch",
+        "type": "al",
+        "environmentType": "OnPrem",
+        "server": "http://srv19-bc-dev.lorca.fr",
+        "serverInstance": "LORCA2_DEV",
+        "port": 7069,
+        "authentication": "Windows",
+        "startupObjectType": "Page",
+        "startupObjectId": 87090,
+        "breakOnError": true,
+        "launchBrowser": true,
+        //"schemaUpdateMode": "ForceSync"
+      },
+      */
+    {
+      "name": "LORCA_SCI_PROD",
+      "request": "launch",
+      "type": "al",
+      "environmentType": "OnPrem",
+      "server": "http://srv19-bc.lorca.fr",
+      "serverInstance": "LORCA_SCI",
+      "port": 7249,
+      "authentication": "Windows",
+      "startupObjectType": "Page",
+      "startupObjectId": 190,
+      "breakOnError": true,
+      "launchBrowser": true,
+      //"schemaUpdateMode": "ForceSync"
+    },
+    {
+      "name": "LORCA_SCI_TEST",
+      "request": "launch",
+      "type": "al",
+      "environmentType": "OnPrem",
+      "server": "http://srv19-bc-dev.lorca.fr",
+      "serverInstance": "LORCA_SCI_TEST",
+      "port": 7349,
+      "authentication": "Windows",
+      "startupObjectType": "Page",
+      "startupObjectId": 87401,
+      "breakOnError": "ExcludeTry",
+      "launchBrowser": true,
+      //"schemaUpdateMode": "ForceSync"
+    }
+  ]
 }

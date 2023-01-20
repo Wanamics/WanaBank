@@ -118,16 +118,6 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
             }
         }
     }
-    requestpage
-    {
-        layout
-        {
-        }
-        actions
-        {
-        }
-    }
-
     var
         MultiCompBankAccount: Record "wan Company Bank Account";
         BankAccount: Record "Bank Account";
@@ -138,6 +128,11 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
         GeneralLedgerSetup: Record "General Ledger Setup";
         DataExch: Record "Data Exch.";
         DataExchField: Record "Data Exch. Field";
+
+    trigger OnPreXmlPort()
+    begin
+        AllCompanies();
+    end;
 
     local procedure GetBankAccount(): Boolean
     begin
@@ -283,7 +278,7 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
 
     local procedure FillMultiCompBankAccountForCompany(pCompanyName: Text)
     var
-        AlreadyExistsErr: Label 'Bank Account %1 of company %2 and %3 of %4 have the same %5 %6 and %7 %8';
+        AlreadyExistsErr: Label 'Bank Account %1 of company %2 and %3 of %4 have the same %5 %6';
     begin
         BankAccount.ChangeCompany(pCompanyName);
         BankAccount.SetFilter(IBAN, '<>%1', '');
@@ -310,5 +305,4 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
         BankAccReconciliation."Balance Last Statement" := pBalanceLastStatement;
         BankAccReconciliation.Insert(false);
     end;
-
 }
