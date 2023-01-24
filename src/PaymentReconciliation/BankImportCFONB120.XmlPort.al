@@ -119,7 +119,7 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
         }
     }
     var
-        MultiCompBankAccount: Record "wan Company Bank Account";
+        MultiCompBankAccount: Record "wan Company Bank Account" temporary;
         BankAccount: Record "Bank Account";
         BankAccReconciliation: Record "Bank Acc. Reconciliation";
         BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line";
