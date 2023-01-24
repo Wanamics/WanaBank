@@ -119,7 +119,7 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
         }
     }
     var
-        MultiCompBankAccount: Record "wan Company Bank Account" temporary;
+        MultiCompBankAccount: Record "wan Company Bank Account";
         BankAccount: Record "Bank Account";
         BankAccReconciliation: Record "Bank Acc. Reconciliation";
         BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line";
@@ -131,7 +131,7 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
 
     trigger OnPreXmlPort()
     begin
-        AllCompanies();
+        MultiCompBankAccount.FillAllCompanies();
     end;
 
     local procedure GetBankAccount(): Boolean
@@ -230,10 +230,8 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
 
     local procedure EndingBalance()
     begin
-        /* ??
         if MultiCompBankAccount."No." = '' then
             exit;
-        */
         Evaluate(BankAccReconciliation."Statement Date", _OperationDate);
         BankAccReconciliation."Statement Ending Balance" := ToAmount(_Amount, _NoOfDecimals);
         BankAccReconciliation.Modify(true);
@@ -261,6 +259,17 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
         Evaluate(ReturnValue, pTextDate);
     end;
 
+    local procedure BankAccReconciliationInsert(pBalanceLastStatement: decimal; pNextStatementNo: text);
+    begin
+        BankAccReconciliation.Init();
+        BankAccReconciliation."Statement Type" := BankAccReconciliation."Statement Type"::"Payment Application";
+        BankAccReconciliation."Bank Account No." := MultiCompBankAccount."No.";
+        BankAccReconciliation."Statement No." := pNextStatementNo;
+        BankAccReconciliation."Balance Last Statement" := pBalanceLastStatement;
+        BankAccReconciliation.Insert(false);
+    end;
+
+    /*
     internal procedure AllCompanies()
     var
         Company: Record Company;
@@ -295,14 +304,6 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
                 MultiCompBankAccount.Insert();
             until BankAccount.Next() = 0;
     end;
+    */
 
-    local procedure BankAccReconciliationInsert(pBalanceLastStatement: decimal; pNextStatementNo: text);
-    begin
-        BankAccReconciliation.Init();
-        BankAccReconciliation."Statement Type" := BankAccReconciliation."Statement Type"::"Payment Application";
-        BankAccReconciliation."Bank Account No." := MultiCompBankAccount."No.";
-        BankAccReconciliation."Statement No." := pNextStatementNo;
-        BankAccReconciliation."Balance Last Statement" := pBalanceLastStatement;
-        BankAccReconciliation.Insert(false);
-    end;
 }

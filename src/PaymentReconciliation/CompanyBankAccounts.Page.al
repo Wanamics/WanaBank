@@ -114,6 +114,10 @@ page 87401 "wan Companies Bank Reconcil."
             }
         }
     }
+    trigger OnOpenPage()
+    begin
+
+    end;
 
     trigger OnAfterGetRecord()
     begin

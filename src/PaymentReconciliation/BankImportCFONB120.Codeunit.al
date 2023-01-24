@@ -4,22 +4,16 @@ codeunit 87400 "wan Bank Rec. Import CFONB120"
 
     trigger OnRun()
     begin
-        ImportBankAccountReconciliation(Rec, '');
-    end;
-
-    procedure ImportBankAccountReconciliation(var Rec: Record "Bank Acc. Reconciliation"; pCompanyName: Text)
-    var
-        TempBankAccReconciliation: Record "Bank Acc. Reconciliation" temporary;
-        ImportCFONB120: XmlPort "wan Bank Rec. Import CFONB120";
-    begin
+        /*
         if pCompanyName = '' then
             ImportCFONB120.AllCompanies()
         else
             ImportCFONB120.OneCompany();
-        ImportCFONB120.Run();
+        */
+        Xmlport.Run(XmlPort::"wan Bank Rec. Import CFONB120");
         if Rec.FindSet() then
             repeat
-                if not TempBankAccReconciliation.Get(Rec."Statement Type", Rec."Bank Account No.", Rec."Statement No.") then
+                if not Rec.Get(Rec."Statement Type", Rec."Bank Account No.", Rec."Statement No.") then
                     UpdateBankDescription(Rec);
             until Rec.Next() = 0;
     end;

@@ -36,5 +36,34 @@ table 87400 "wan Company Bank Account"
         {
         }
     }
-}
+    internal procedure FillAllCompanies()
+    var
+        Company: Record Company;
+    begin
+        if Company.FindSet() then
+            repeat
+                FillForCompany(Company.Name);
+            until Company.Next() = 0;
+    end;
 
+    internal procedure FillForCompany(pCompanyName: Text)
+    var
+        AlreadyExistsErr: Label 'Bank Account %1 of company %2 and %3 of %4 have the same %5 %6';
+        BankAccount: Record "Bank Account";
+    begin
+        BankAccount.ChangeCompany(pCompanyName);
+        BankAccount.SetFilter(IBAN, '<>%1', '');
+        if BankAccount.FindSet() then
+            repeat
+                TransferFields(BankAccount);
+                "Company Name" := pCompanyName;
+                "Account No." := CopyStr(DelChr(BankAccount.IBAN), 5, 21);
+                if Get("Account No.") then
+                    Error(AlreadyExistsErr,
+                        BankAccount."No.", CompanyName,
+                        "No.", "Company Name",
+                        BankAccount.FieldCaption("IBAN"), BankAccount.IBAN);
+                Insert();
+            until BankAccount.Next() = 0;
+    end;
+}

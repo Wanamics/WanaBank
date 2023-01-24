@@ -25,10 +25,8 @@ pageextension 87401 "wan Payment Reconcil. Journals" extends "Pmt. Reconciliatio
                 Caption = 'Import CFONB120';
 
                 trigger OnAction()
-                var
-                    BankImportCFONB120: Codeunit "wan Bank Rec. Import CFONB120";
                 begin
-                    BankImportCFONB120.ImportBankAccountReconciliation(Rec, CompanyName);
+                    Xmlport.Run(Xmlport::"wan Bank Rec. Import CFONB120");
                 end;
             }
         }

@@ -9,6 +9,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table wan Company Bank Account - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2137012 - Method 200505477 - NamedType 2126343653" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bank Account %1 of company %2 and %3 of %4 have the same %5 %6</source>
+          <target state="needs-translation">Les compte bancaires %1 de la société %2 et %3 de la société %4 ont le même %5 %6.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Company Bank Account - Method FillForCompany - NamedType AlreadyExistsErr</note>
+        </trans-unit>
         <trans-unit id="Table 2137012 - Field 1622979514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account No.</source>
           <target>N° compte</target>
@@ -296,13 +302,6 @@
           <target>Import relevé bancaire</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="XmlPort 580001984 - Method 2418344728 - NamedType 2126343653" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bank Account %1 of company %2 and %3 of %4 have the same %5 %6</source>
-          <target state="needs-adaptation">Compte bancaire %1 de la société %2 et %3 de %4 ont le même %5 %6</target>
-          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method FillMultiCompBankAccountForCompany - NamedType AlreadyExistsErr</note>
         </trans-unit>
         <trans-unit id="XmlPort 580001984 - Method 1069624050 - NamedType 3475688240" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 for bank account %2 of company %3 must be %4</source>
