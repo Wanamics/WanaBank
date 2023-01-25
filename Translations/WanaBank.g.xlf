@@ -253,20 +253,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="XmlPort 580001984 - Method 1069624050 - NamedType 3475688240" size-unit="char" translate="yes" xml:space="preserve">
-          <source>%1 for bank account %2 of company %3 must be %4</source>
+        <trans-unit id="XmlPort 580001984 - Method 1069624050 - NamedType 3208021770" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 %2 or %3 %4 doesn't match last %5 ones %6 at %7 for Bank Account %8 in company %9.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType BalanceLastStatementErr</note>
-        </trans-unit>
-        <trans-unit id="XmlPort 580001984 - Method 1069624050 - NamedType 3896357331" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Last reconciliation %1 for bank account %2 of company %3 must be %4</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType LastBankAccReconciliationBalanceErr</note>
-        </trans-unit>
-        <trans-unit id="XmlPort 580001984 - Method 1069624050 - NamedType 2983779794" size-unit="char" translate="yes" xml:space="preserve">
-          <source>does not match the new statement starting date of company %1</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType BankStatementDateMismatchErr</note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType DateOrBalanceDoesntMatchErr</note>
         </trans-unit>
         <trans-unit id="PageExtension 3463830577 - Control 4139384376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3897649796">
           <source>IBAN</source>
@@ -292,6 +282,11 @@
           <source>Import CFONB120</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Reconcil. Journals - Action wanImportCFONB120 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 732080047 - Control 1183881407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4226890118">
+          <source>No. of Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Reconcil. Journals - Control wanNoOfLines - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3608883083 - Action 346897627 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2857567339">
           <source>Print</source>

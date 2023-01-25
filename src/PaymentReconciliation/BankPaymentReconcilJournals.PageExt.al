@@ -8,6 +8,11 @@ pageextension 87401 "wan Payment Reconcil. Journals" extends "Pmt. Reconciliatio
             {
                 ApplicationArea = All;
             }
+            field(wanNoOfLines; wanNoOfLines())
+            {
+                Caption = 'No. of Lines';
+                ApplicationArea = All;
+            }
         }
     }
     actions
@@ -23,7 +28,6 @@ pageextension 87401 "wan Payment Reconcil. Journals" extends "Pmt. Reconciliatio
                 PromotedCategory = Process;
                 PromotedOnly = true;
                 Caption = 'Import CFONB120';
-
                 trigger OnAction()
                 begin
                     Xmlport.Run(Xmlport::"wan Bank Rec. Import CFONB120");
@@ -31,4 +35,13 @@ pageextension 87401 "wan Payment Reconcil. Journals" extends "Pmt. Reconciliatio
             }
         }
     }
+    local procedure wanNoOfLines(): Integer
+    var
+        BancAccReconcilisationLine: Record "Bank Acc. Reconciliation Line";
+    begin
+        BancAccReconcilisationLine.SetRange("Statement Type", Rec."Statement Type");
+        BancAccReconcilisationLine.SetRange("Bank Account No.", Rec."Bank Account No.");
+        BancAccReconcilisationLine.SetRange("Statement No.", Rec."Statement No.");
+        Exit(BancAccReconcilisationLine.Count());
+    end;
 }
