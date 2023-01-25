@@ -65,7 +65,6 @@ codeunit 87401 "wan Bank Acc. Reconcil. Events"
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Bank Acc. Recon. Post (Yes/No)", 'OnBeforeBankAccReconPostYesNo', '', false, false)]
-    //local procedure OnBeforeInvokePost(BankAccReconciliation: Record "Bank Acc. Reconciliation")
     local procedure OnBeforeBankAccReconPostYesNo(var BankAccReconciliation: Record "Bank Acc. Reconciliation"; var Result: Boolean; var Handled: Boolean)
     var
         lRec: Record "Bank Acc. Reconciliation";

@@ -4,12 +4,6 @@ codeunit 87400 "wan Bank Rec. Import CFONB120"
 
     trigger OnRun()
     begin
-        /*
-        if pCompanyName = '' then
-            ImportCFONB120.AllCompanies()
-        else
-            ImportCFONB120.OneCompany();
-        */
         Xmlport.Run(XmlPort::"wan Bank Rec. Import CFONB120");
         if Rec.FindSet() then
             repeat

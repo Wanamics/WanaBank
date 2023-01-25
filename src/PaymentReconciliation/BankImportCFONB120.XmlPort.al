@@ -170,9 +170,11 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
         if (MultiCompBankAccount."No." = BankAccReconciliation."Bank Account No.") or (MultiCompBankAccount."No." = '') then
             exit;
         BankAccReconciliation.ChangeCompany(MultiCompBankAccount."Company Name");
+        BaknAccReconciliation.SetCurrentKey("Statement Type", "Bank Account No.", "Statement Date");
         BankAccReconciliation.SetRange("Bank Account No.", MultiCompBankAccount."No.");
         BaknAccReconciliation.SetRange("Statement Type", BankAccReconciliation."Statement Type"::"Payment Application");
         if BankAccReconciliation.FindLast() then begin
+            /*
             if BankAccReconciliation."Statement Ending Balance" <> ToAmount(_Amount, _NoOfDecimals) then
                 Error(LastBankAccReconciliationBalanceErr,
                     BankAccReconciliation.FieldCaption("Balance Last Statement"),
@@ -181,8 +183,12 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
                     ToAmount(_Amount, _NoOfDecimals));
             if BankAccReconciliation."Statement Date" <> ToDate(_OperationDate) then
                 BankAccReconciliation.FieldError("Statement Date", Strsubstno(BankStatementDateMismatchErr, MultiCompBankAccount."Company Name"));
+            */
+            BankAccReconciliation.TestField("Statement Ending Balance", ToAmount(_Amount, _NoOfDecimals));
+            BankAccReconciliation.TestField("Statement Date", ToDate(_OperationDate));
             BankAccReconciliationInsert(BankAccReconciliation."Statement Ending Balance", IncStr(BankAccReconciliation."Statement No."));
         end else begin
+            /*
             if BankAccount."Balance Last Statement" <> ToAmount(_Amount, _NoOfDecimals) then
                 Error(BalanceLastStatementErr,
                     BankAccount.FieldCaption("Balance Last Statement"),
@@ -194,6 +200,9 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
             if BankAccountStatement.FindLast() then
                 if BankAccountStatement."Statement Date" <> ToDate(_OperationDate) then
                     BankAccountStatement.FieldError("Statement Date", Strsubstno(BankStatementDateMismatchErr, MultiCompBankAccount."Company Name"));
+            */
+            BankAccountStatement.TestField("Statement Ending Balance", ToAmount(_Amount, _NoOfDecimals));
+            BankAccountStatement.TestField("Statement Date", ToDate(_OperationDate));
             BankAccReconciliationInsert(BankAccountStatement."Statement Ending Balance", IncStr(BankAccount."Last Payment Statement No."));
         end;
         //BankAccReconciliationInsert(); //(BankAccReconciliation."Statement Type"::"Payment Application");
