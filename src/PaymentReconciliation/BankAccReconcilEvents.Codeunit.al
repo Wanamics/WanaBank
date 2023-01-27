@@ -16,6 +16,13 @@ codeunit 87401 "wan Bank Acc. Reconcil. Events"
             GenJournalLine.Description := BankAccReconciliationLine."Transaction Text";
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Bank Acc. Reconciliation Post", 'OnTransferToPostPmtApplnOnBeforePostedPmtReconLineInsert', '', false, false)]
+    local procedure OnTransferToPostPmtApplnOnBeforePostedPmtReconLineInsert(var PostedPmtReconLine: Record "Posted Payment Recon. Line"; BankAccReconLine: Record "Bank Acc. Reconciliation Line")
+    begin
+        if PostedPmtReconLine.Description = '' then
+            PostedPmtReconLine.Description := BankAccReconLine."Transaction Text";
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Bank Acc. Reconciliation Post", 'OnBeforePost', '', false, false)]
     local procedure OnBeforePost(var BankAccReconciliation: Record "Bank Acc. Reconciliation"; var BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line")
     var
