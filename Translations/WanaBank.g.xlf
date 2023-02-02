@@ -298,11 +298,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan SEPA Direct Debit Mandates - Control Attached Documents - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 3294239877 - Control 3146124573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332154277">
-          <source>Bal. Source No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Text-to-Account Mapping - Control wanBalSourceNo - Property Caption</note>
-        </trans-unit>
         <trans-unit id="PageExtension 3485660885 - NamedType 438128090" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3485660885">
           <source>Remittance Advice</source>
           <note from="Developer" annotates="general" priority="2"></note>

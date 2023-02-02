@@ -202,8 +202,10 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
                         BankAccountStatement.FieldCaption("Statement Date"), ToDate(_OperationDate),
                         BankAccount.TableCaption, BankAccount."Balance Last Statement", 0D,
                         BankAccount."Bank Account No.", MultiCompBankAccount."Company Name");
-            BankAccount.TestField("Last Payment Statement No.");
-            BankAccReconciliationInsert(IncStr(BankAccount."Last Payment Statement No."), ToDate(_OperationDate), ToAmount(_Amount, _NoOfDecimals));
+            //BankAccount.TestField("Last Payment Statement No.");
+            //BankAccReconciliationInsert(IncStr(BankAccount."Last Payment Statement No."), ToDate(_OperationDate), ToAmount(_Amount, _NoOfDecimals));
+            BankAccount.TestField("Last Statement No.");
+            BankAccReconciliationInsert(IncStr(BankAccount."Last Statement No."), ToDate(_OperationDate), ToAmount(_Amount, _NoOfDecimals));
         end;
     end;
 
