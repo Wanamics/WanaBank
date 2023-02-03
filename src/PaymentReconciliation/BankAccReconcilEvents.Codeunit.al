@@ -85,4 +85,10 @@ codeunit 87401 "wan Bank Acc. Reconcil. Events"
         if lRec.FindFirst() and (lRec."Statement No." <> BankAccReconciliation."Statement No.") then
             BankAccReconciliation.FieldError("Statement Date", MustBeTheFirstOneErr);
     end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Match Bank Pmt. Appl.", 'OnBeforeOnRun', '', false, false)]
+    local procedure OnBeforeOnRun(var BankAccReconciliation: Record "Bank Acc. Reconciliation"; var IsHandled: Boolean)
+    begin
+        Codeunit.Run(Codeunit::"wan Text to Account Mapping", BankAccReconciliation);
+    end;
 }

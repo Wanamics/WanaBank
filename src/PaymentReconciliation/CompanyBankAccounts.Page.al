@@ -108,7 +108,8 @@ page 87401 "wan Companies Bank Reconcil."
                 Caption = 'Import CFONB120';
                 trigger OnAction()
                 begin
-                    codeunit.Run(codeunit::"wan Bank Rec. Import CFONB120");
+                    //codeunit.Run(codeunit::"wan Bank Rec. Import CFONB120");
+                    Xmlport.Run(Xmlport::"wan Bank Rec. Import CFONB120");
                     CurrPage.Update(false);
                 end;
             }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="fr-FR" original="WanaBank">
+  <file datatype="xml" source-language="en-US" target-language="fr-FR" original="WanaBank.g.xlf">
     <body>
       <group id="body">
         <trans-unit id="Table 2137012 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -357,6 +357,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan SEPA Direct Debit Mandates - Control Attached Documents - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3294239877 - Action 3580283843 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332154277">
+          <source>Order by decreasing length</source>
+          <target>Classer par longueur décr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Text-to-Account Mapping - Action wanReorder - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3485660885 - NamedType 438128090" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3485660885">
           <source>Remittance Advice</source>
           <target>Avis de paiement</target>
@@ -449,7 +455,7 @@
         </trans-unit>
         <trans-unit id="ReportExtension 4287475235 - Control 2118179044 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 1122946107">
           <source>Print,Preview,PDF,Email,Word,XML - RDLC layouts only</source>
-          <target>Impression,Aperçu,e-mail,Word,XML - présentation RDLC</target>
+          <target>Impression,Aperçu,PDF,e-mail,Word,XML - présentation RDLC</target>
           <note from="Developer" annotates="general" priority="2">Verbs - to print, to preview, to export to PDF, to email, to export to word, to export to XML (with note that it's for RDLC layouts only)</note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Entries - Control OutputMethod - Property OptionCaption</note>
         </trans-unit>
@@ -527,7 +533,7 @@
         </trans-unit>
         <trans-unit id="ReportExtension 4004858678 - Control 2118179044 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 3620084558">
           <source>Print,Preview,PDF,Email,Word,XML - RDLC layouts only</source>
-          <target>Impression,Aperçu,e-mail,Word,XML - présentation RDLC</target>
+          <target>Impression,Aperçu,PDF,e-mail,Word,XML - présentation RDLC</target>
           <note from="Developer" annotates="general" priority="2">Verbs - to print, to preview, to export to PDF, to email, to export to word, to export to XML (with note that it's for RDLC layouts only)</note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension wan Remittance Advice-Journal - Control OutputMethod - Property OptionCaption</note>
         </trans-unit>
