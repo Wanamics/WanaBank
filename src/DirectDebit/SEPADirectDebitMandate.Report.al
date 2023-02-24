@@ -9,18 +9,12 @@ report 87406 "wan SEPA Direct Debit Mandate"
         {
             DataItemTableView =;
             CalcFields = Picture;
-            column(Comp_Name; Name)
-            {
-            }
-            column(Comp_Address; FullAddress(CompAddress))
-            {
-            }
-            column(Comp_Picture; Picture)
-            {
-            }
-            column(Comp_ICS; CISD)
-            {
-            }
+            column(Comp_Name; Name) { }
+            column(Comp_Address; FullAddress(CompAddress)) { }
+            column(Comp_Picture; Picture) { }
+            /*
+            column(Comp_ICS; CISD) {} // Do not exists in W1
+            */
             trigger OnAfterGetRecord()
             var
                 TempCompanyInformation: Record "Company Information";

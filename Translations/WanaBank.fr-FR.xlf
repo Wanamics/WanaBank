@@ -45,6 +45,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table wan Company Bank Account - Field No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1926522916 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direct Debit Installment</source>
+          <target>Prélèvement fractionné</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Direct Debit Installment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1926522916 - Field 3015332611 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date Calculation</source>
+          <target>Calcul date échéance</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Direct Debit Installment - Field Due Date Calculation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1926522916 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <target>N° ligne</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Direct Debit Installment - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1926522916 - Field 3855271124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Method Code</source>
+          <target>Code mode de règlement</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Direct Debit Installment - Field Payment Method Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 4250744797 - Method 107581928 - NamedType 2723982390" size-unit="char" translate="yes" xml:space="preserve">
           <source>must be the first one for this bank account</source>
           <target>doit être la première pour ce compte</target>
@@ -140,6 +164,31 @@
           <target>Détail transaction bancaire</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page wan Data Exch Field Details - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3884173125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direct Debit Installments</source>
+          <target>Fractionnements prélèvement</target>
+          <target>[NAB: SUGGESTION]Paiements fractionnés</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Direct Debit Installments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3884173125 - Control 3015332611 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Due Date Calculation field.</source>
+          <target>Spécifie la formule de calcul de la date d'échéance.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Direct Debit Installments - Control Due Date Calculation - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3884173125 - Control 3459261662 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Line No. field.</source>
+          <target>Spécifie la valeur du N° ligne</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Direct Debit Installments - Control Installment Line No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3884173125 - Control 3855271124 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Payment Method Code field.</source>
+          <target>Spécifie la valeur du code mode de règlement.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Direct Debit Installments - Control Payment Method Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 1985034320 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bank Account Reconciliation</source>
@@ -333,6 +382,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Journal - Action wanSendRemittanceAdvice - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2720893554 - Action 2280075981 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2805771090">
+          <source>Direct Debit Installments</source>
+          <target>Fractionnements prélèvement</target>
+          <target>[NAB: SUGGESTION]Paiements fractionnés</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Methods - Action wanDirectDebitInstallments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2720893554 - Control 3884173125 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2805771090">
+          <source>Specifies the value of the Direct Debit Installments field.</source>
+          <target>Spécifie le nombre de fractionnements prélèvement.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Methods - Control wan Direct Debit Installments - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2720893554 - Control 3884173125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2805771090">
+          <source>Direct Debit Installments</source>
+          <target>Fractionnements prélèvement</target>
+          <target>[NAB: SUGGESTION]Paiements fractionnés</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Methods - Control wan Direct Debit Installments - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 732080047 - Action 4113484412 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4226890118">
           <source>Import CFONB120</source>
           <target>Import CFONB120</target>
@@ -380,6 +449,19 @@
           <target>Envoyer avis de paiement</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Vendor Ledger Entries - Action wanSendRemittanceAdvice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4156271111 - Field 3884173125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3566004263">
+          <source>Direct Debit Installments</source>
+          <target>Fractionnements prélèvement</target>
+          <target>[NAB: SUGGESTION]Paiements fractionnés</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Payment Method - Field wan Direct Debit Installments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 2222567150 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+          <source>WanaBank Installment</source>
+          <target>WanaBank prélèvement fractionné</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet W_Bank_Installment - Property Caption</note>
         </trans-unit>
         <trans-unit id="ReportExtension 4287475235 - NamedType 231594876" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 4287475235">
           <source>Initial Amount</source>

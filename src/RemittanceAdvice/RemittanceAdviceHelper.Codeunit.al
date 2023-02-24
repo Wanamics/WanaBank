@@ -17,14 +17,14 @@ codeunit 87403 "wan Remittance Advice Helper"
         if pCompanyInfo."Home Page" <> '' then
             pCompanyContactInfo += LineFeed() + pCompanyInfo."Home Page";
 
-        if (pCompanyInfo."Legal Form" <> '') or (pCompanyInfo."Stock Capital" <> '') then
-            pCompanyLegalInfo += pCompanyInfo."Legal Form" + ', ' + pCompanyInfo.FieldCaption("Stock Capital") + ' ' + pCompanyInfo."Stock Capital";
+        //if (pCompanyInfo."Legal Form" <> '') or (pCompanyInfo."Stock Capital" <> '') then
+        //    pCompanyLegalInfo += pCompanyInfo."Legal Form" + ', ' + pCompanyInfo.FieldCaption("Stock Capital") + ' ' + pCompanyInfo."Stock Capital";
         if (pCompanyInfo."Registration No." <> '') then
             pCompanyLegalInfo += LineFeed() + pCompanyInfo.FieldCaption("Registration No.") + ' ' + pCompanyInfo."Registration No.";
-        if pCompanyInfo."APE Code" <> '' then
-            pCompanyLegalInfo += LineFeed() + pCompanyInfo.FieldCaption("APE Code") + ' ' + pCompanyInfo."APE Code";
-        if pCompanyInfo."Trade Register" <> '' then
-            pCompanyLegalInfo += LineFeed() + pCompanyInfo.FieldCaption("Trade Register") + ' ' + pCompanyInfo."Trade Register";
+        //if pCompanyInfo."APE Code" <> '' then
+        //    pCompanyLegalInfo += LineFeed() + pCompanyInfo.FieldCaption("APE Code") + ' ' + pCompanyInfo."APE Code";
+        //if pCompanyInfo."Trade Register" <> '' then
+        //    pCompanyLegalInfo += LineFeed() + pCompanyInfo.FieldCaption("Trade Register") + ' ' + pCompanyInfo."Trade Register";
         if pCompanyInfo."VAT Registration No." <> '' then
             pCompanyLegalInfo += LineFeed() + pCompanyInfo.FieldCaption("VAT Registration No.") + ' ' + pCompanyInfo."VAT Registration No.";
     end;
