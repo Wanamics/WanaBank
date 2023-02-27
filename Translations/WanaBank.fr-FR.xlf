@@ -93,6 +93,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Bank Acc. Reconcil. Events - Method OnBeforeValidateEventAccountNo - NamedType CantBeBankAccountNoErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 716466780 - Method 326850813 - NamedType 2551578859" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sum. Bal. Bank Account</source>
+          <target>Central. contrep. bancaire</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Sum Bal. Bank Acct. Events - Method SumBalBankAccount - NamedType SumBalBankAccountLbl</note>
+        </trans-unit>
         <trans-unit id="Page 4004623534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bank Account Reconcil. per Company</source>
           <target>Rapprochement bancaire par société</target>
@@ -168,7 +174,6 @@
         <trans-unit id="Page 3884173125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Direct Debit Installments</source>
           <target>Fractionnements prélèvement</target>
-          <target>[NAB: SUGGESTION]Paiements fractionnés</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page wan Direct Debit Installments - Property Caption</note>
         </trans-unit>
@@ -237,6 +242,132 @@
           <target>Date rapprochement</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Bank Acc. Reconcil. - Control PostingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Direct Debit Coll. &amp; Bank Sum.</source>
+          <target>Valider encaissement prélèvement centralisé</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - NamedType 3126439691" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 journal lines were created. %2 lines were skipped.</source>
+          <target>%1 lignes feuille ont été créées. %2 lignes ont été ignorées.</target>
+          <note from="Developer" annotates="general" priority="2">%1 and %2 are both numbers / count.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - NamedType JnlCreatedMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - NamedType 563373164" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 payments were posted. %2 lines were skipped.</source>
+          <target>%1 paiements ont été validés. %2 lignes ont été ignorées.</target>
+          <note from="Developer" annotates="general" priority="2">%1 and %2 are both numbers / count.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - NamedType PostedMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - NamedType 2948923292" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 %2 Direct Debit</source>
+          <target>%1 %2 Prélèvement</target>
+          <note from="Developer" annotates="general" priority="2">%1=Doc. type, %2=Doc. No. E.g. Invoice 234 Direct Debit</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - NamedType PostingTxt</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - NamedType 2779639592" size-unit="char" translate="yes" xml:space="preserve">
+          <source>#1##################</source>
+          <target>#1##################</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - NamedType ProgressMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - NamedType 1679187439" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Only General Journal templates of type %1, %2, %3, %4, or %5 are allowed.</source>
+          <target>Seuls les modèles feuille comptabilité de type %1, %2, %3, %4 ou %5 sont autorisés.</target>
+          <note from="Developer" annotates="general" priority="2">%1..5 lists Type=General,Purchases,Payments,Sales,Cash Receipts</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - NamedType TemplateTypeErr</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Method 3639110116 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direct Debit Sum</source>
+          <target>Prélèvement centralisé</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Method wanPostBankJnlLine - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Control 4266812556 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want to post the payment receipt when you choose the OK button. The payment receipt will be prepared in the specified journal and will not be posted until someone posts the journal lines in question.</source>
+          <target>Indique si vous souhaitez valider le reçu de paiement lorsque vous sélectionnez le bouton OK. Le reçu de paiement est préparé dans la feuille spécifiée et n'est pas validée tant que quelqu'un d'autre valide les lignes feuille en question.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Control CreateJnlOnly - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Control 4266812556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Journal Only</source>
+          <target>Créer feuille uniquement</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Control CreateJnlOnly - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Control 842057268 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies which of your company's bank accounts the collected payment will be transferred to from the customer's bank account.</source>
+          <target>Spécifie les comptes bancaires de votre société sur lesquels le paiement collecté va être transféré à partir du compte bancaire du client.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Control DirectDebitCollection."To Bank Account No." - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Control 842057268 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bank Account No.</source>
+          <target>N° compte bancaire</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Control DirectDebitCollection."To Bank Account No." - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Control 3269137172 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the collection.</source>
+          <target>Spécifie le prélèvement.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Control DirectDebitCollection.Identifier - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Control 3269137172 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Identifier</source>
+          <target>Identifiant</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Control DirectDebitCollection.Identifier - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Control 4101189177 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the status of the collection.</source>
+          <target>Spécifie l'état du prélèvement.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Control DirectDebitCollection.Status - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Control 4101189177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <target>Statut</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Control DirectDebitCollection.Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Control 3796866192 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the direct debit collection that you want to post payment receipt for.</source>
+          <target>Spécifie le prélèvement pour lequel vous souhaitez valider la réception paiement.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Control DirectDebitCollectionNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Control 3796866192 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direct Debit Collection No.</source>
+          <target>N° recouvrement prélèvement</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Control DirectDebitCollectionNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Control 2787187096 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the general journal batch that the entries are placed in.</source>
+          <target>Spécifie le modèle nom feuille général dans lequel les écritures sont saisies.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Control GeneralJournalBatchName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Control 2787187096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Journal Batch</source>
+          <target>Nom feuille comptabilité</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Control GeneralJournalBatchName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Control 4227550748 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the general journal template that the entries are placed in.</source>
+          <target>Spécifie le modèle feuille général dans lequel les écritures sont saisies.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Control GeneralJournalTemplateName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2789827741 - Control 4227550748 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Journal Template</source>
+          <target>Modèle feuille comptabilité</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Post Direct Debit Collect. - Control GeneralJournalTemplateName - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 690047454 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>SEPA Direct Debit Mandate</source>
@@ -346,6 +477,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - ReportLabel PeriodDebitAmtCaption</note>
         </trans-unit>
+        <trans-unit id="Query 848360121 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>wan Sum Bal. Bank Acct.</source>
+          <target>Centralisation contrepartie banque</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query wan Sum Bal. Bank Acct. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="XmlPort 580001984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Import Bank Statement</source>
           <target>Import relevé bancaire</target>
@@ -357,6 +494,30 @@
           <target>%1 %2 ou %3 %4 ne correspondent pas à %5 %6 au %7 de %8 pour la société %9.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType DateOrBalanceDoesntMatchErr</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1147269286 - Action 1185346791 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
+          <source>Post receipts of a payment for sales invoices. You can do this after the direct-debit collection is successfully processed by the bank.</source>
+          <target>Publiez des reçus pour un paiement concernant des factures vente. Vous pouvez réaliser cette opération après que le prélèvement a bien été traité par la banque.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collect. Ent. - Action wanPostBankSum - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1147269286 - Action 1185346791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
+          <source>Post Payment Receipts Sum</source>
+          <target>Valider reçus paiement total</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collect. Ent. - Action wanPostBankSum - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3475019378 - Action 1185346791 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3659220562">
+          <source>Post receipts of a payment for sales invoices. You can do this after the direct-debit collection is successfully processed by the bank.</source>
+          <target>Publiez des reçus pour un paiement concernant des factures vente. Vous pouvez réaliser cette opération après que le prélèvement a bien été traité par la banque.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collections - Action wanPostBankSum - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3475019378 - Action 1185346791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3659220562">
+          <source>Post Payment Receipts Sum</source>
+          <target>Valider reçus paiement total</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collections - Action wanPostBankSum - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3463830577 - Control 4139384376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3897649796">
           <source>IBAN</source>
@@ -385,7 +546,6 @@
         <trans-unit id="PageExtension 2720893554 - Action 2280075981 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2805771090">
           <source>Direct Debit Installments</source>
           <target>Fractionnements prélèvement</target>
-          <target>[NAB: SUGGESTION]Paiements fractionnés</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Methods - Action wanDirectDebitInstallments - Property Caption</note>
         </trans-unit>
@@ -398,7 +558,6 @@
         <trans-unit id="PageExtension 2720893554 - Control 3884173125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2805771090">
           <source>Direct Debit Installments</source>
           <target>Fractionnements prélèvement</target>
-          <target>[NAB: SUGGESTION]Paiements fractionnés</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Methods - Control wan Direct Debit Installments - Property Caption</note>
         </trans-unit>
@@ -453,7 +612,6 @@
         <trans-unit id="TableExtension 4156271111 - Field 3884173125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3566004263">
           <source>Direct Debit Installments</source>
           <target>Fractionnements prélèvement</target>
-          <target>[NAB: SUGGESTION]Paiements fractionnés</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Payment Method - Field wan Direct Debit Installments - Property Caption</note>
         </trans-unit>
