@@ -513,10 +513,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Payment Method - Field wan Direct Debit Installments - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PermissionSet 2222567150 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
-          <source>WanaBank Installment</source>
+        <trans-unit id="PermissionSet 2419484069 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>WanaBank DD Installment</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet W_Bank_Installment - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet WanaBank_Installment - Property Caption</note>
         </trans-unit>
         <trans-unit id="ReportExtension 4287475235 - NamedType 231594876" size-unit="char" translate="yes" xml:space="preserve" al-object-target="ReportExtension 4287475235">
           <source>Initial Amount</source>
