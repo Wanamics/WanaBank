@@ -2,7 +2,7 @@ tableextension 87410 "wan Payment Method" extends "Payment Method"
 {
     fields
     {
-        field(57100; "wan Direct Debit Installments"; Integer)
+        field(87410; "wan Direct Debit Installments"; Integer)
         {
             Caption = 'Direct Debit Installments';
             FieldClass = FlowField;
