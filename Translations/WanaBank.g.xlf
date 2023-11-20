@@ -403,6 +403,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Query wan Sum Bal. Bank Acct. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="XmlPort 1472915337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Bank Statement (no separator)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB000 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 1472915337 - Method 1069624050 - NamedType 3208021770" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 %2 or %3 %4 doesn't match last %5 ones %6 at %7 for Bank Account %8 in company %9.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB000 - Method StartingBalance - NamedType DateOrBalanceDoesntMatchErr</note>
+        </trans-unit>
         <trans-unit id="XmlPort 580001984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Import Bank Statement</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -467,6 +477,11 @@
           <source>Direct Debit Installments</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Methods - Control wan Direct Debit Installments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 732080047 - Action 2384563301 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4226890118">
+          <source>Import CFONB120 (no separator)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Reconcil. Journals - Action wanImportCFONB000 - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 732080047 - Action 4113484412 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4226890118">
           <source>Import CFONB120</source>

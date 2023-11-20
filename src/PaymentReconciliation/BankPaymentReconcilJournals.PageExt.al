@@ -23,16 +23,28 @@ pageextension 87401 "wan Payment Reconcil. Journals" extends "Pmt. Reconciliatio
             {
                 ApplicationArea = All;
                 Image = Import;
-                Promoted = true;
-                PromotedIsBig = true;
-                PromotedCategory = Process;
-                PromotedOnly = true;
                 Caption = 'Import CFONB120';
                 trigger OnAction()
                 begin
                     Xmlport.Run(Xmlport::"wan Bank Rec. Import CFONB120");
                 end;
             }
+            action(wanImportCFONB000)
+            {
+                ApplicationArea = All;
+                Image = Import;
+                Visible = false;
+                Caption = 'Import CFONB120 (no separator)';
+                trigger OnAction()
+                begin
+                    Xmlport.Run(Xmlport::"wan Bank Rec. Import CFONB000");
+                end;
+            }
+        }
+        addlast(Promoted)
+        {
+            actionref(wanImportCFONB120_Promoted; wanImportCFONB120) { }
+            actionref(wanImportCFONB000_Promoted; wanImportCFONB000) { }
         }
     }
     local procedure wanNoOfLines(): Integer

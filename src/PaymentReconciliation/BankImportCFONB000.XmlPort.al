@@ -1,11 +1,11 @@
-xmlport 87401 "wan Bank Rec. Import CFONB120"
+xmlport 87402 "wan Bank Rec. Import CFONB000"
 {
-    Caption = 'Import Bank Statement';
+    Caption = 'Import Bank Statement (no separator)';
     Direction = Import;
     Format = FixedText;
     FormatEvaluate = Legacy;
     UseRequestPage = false;
-    // RecordSeparator = '<NewLine>'; // This is the unique difference with xmlport 87402 "wan Bank Rec. Import CFONB000" 
+    RecordSeparator = '<None>'; // This is the unique difference with xmlport 87401 "wan Bank Rec. Import CFONB120" 
 
     schema
     {
@@ -217,18 +217,18 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
         if MultiCompBankAccount."No." = '' then
             exit;
         BankAccReconciliationLine.Init();
-        BankAccReconciliationLine.Validate("Statement Type", BankAccReconciliation."Statement Type");
-        BankAccReconciliationLine.Validate("Bank Account No.", BankAccReconciliation."Bank Account No.");
-        BankAccReconciliationLine.Validate("Statement No.", BankAccReconciliation."Statement No.");
+        BankAccReconciliationLine."Statement Type" := BankAccReconciliation."Statement Type";
+        BankAccReconciliationLine."Bank Account No." := BankAccReconciliation."Bank Account No.";
+        BankAccReconciliationLine."Statement No." := BankAccReconciliation."Statement No.";
         LineNo += 1;
-        BankAccReconciliationLine.Validate("Statement Line No.", LineNo);
-        BankAccReconciliationLine.Validate("Transaction Date", ToDate(_OperationDate));
-        BankAccReconciliationLine.Validate("Transaction Text", _Description);
-        BankAccReconciliationLine.Validate("Statement Amount", ToAmount(_Amount, _NoOfDecimals));
+        BankAccReconciliationLine."Statement Line No." := LineNo;
+        Evaluate(BankAccReconciliationLine."Transaction Date", _OperationDate);
+        BankAccReconciliationLine."Transaction Text" := _Description;
+        BankAccReconciliationLine."Statement Amount" := ToAmount(_Amount, _NoOfDecimals);
         if _DocumentNo <> '0000000' then
-            BankAccReconciliationLine.Validate("Check No.", _DocumentNo);
-        BankAccReconciliationLine.Validate("Data Exch. Entry No.", DataExch."Entry No.");
-        BankAccReconciliationLine.Validate("Data Exch. Line No.", LineNo);
+            BankAccReconciliationLine."Check No." := _DocumentNo;
+        BankAccReconciliationLine."Data Exch. Entry No." := DataExch."Entry No.";
+        BankAccReconciliationLine."Data Exch. Line No." := LineNo;
         DetailLineNo := 0;
         BankAccReconciliationLine.Insert(false);
     end;
