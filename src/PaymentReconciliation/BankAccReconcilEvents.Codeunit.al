@@ -91,4 +91,11 @@ codeunit 87401 "wan Bank Acc. Reconcil. Events"
     begin
         Codeunit.Run(Codeunit::"wan Text to Account Mapping", BankAccReconciliation);
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Bank Acc. Reconciliation Line", 'OnAfterSetUpNewLine', '', false, false)]
+    local procedure OnAfterSetUpNewLine(var BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line"; xBankAccReconciliationLine: Record "Bank Acc. Reconciliation Line");
+    begin
+        BankAccReconciliationLine."Transaction Date" := 0D;
+    end;
+
 }

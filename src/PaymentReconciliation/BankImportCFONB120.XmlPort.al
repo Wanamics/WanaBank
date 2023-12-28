@@ -102,10 +102,8 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
                     MinOccurs = Zero;
                 }
                 trigger OnBeforeInsertRecord()
-                var
-                    lRetour: Integer;
                 begin
-                    CASE _EntryCode OF
+                    case _EntryCode OF
                         '01':
                             StartingBalance;
                         '04':
@@ -114,7 +112,7 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
                             Details;
                         '07':
                             EndingBalance;
-                    END;
+                    end;
                 end;
             }
         }

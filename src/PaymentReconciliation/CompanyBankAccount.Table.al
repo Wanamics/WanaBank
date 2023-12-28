@@ -60,7 +60,7 @@ table 87400 "wan Company Bank Account"
                 "Account No." := CopyStr(DelChr(BankAccount.IBAN), 5, 21);
                 if Get("Account No.") then
                     Error(AlreadyExistsErr,
-                        BankAccount."No.", CompanyName,
+                        BankAccount."No.", pCompanyName,
                         "No.", "Company Name",
                         BankAccount.FieldCaption("IBAN"), BankAccount.IBAN);
                 Insert();
