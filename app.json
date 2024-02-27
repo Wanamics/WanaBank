@@ -2,9 +2,9 @@
   "id": "b1cd6680-be5f-4f76-b1f3-bcc213c5558f",
   "name": "WanaBank",
   "publisher": "Wanamics",
-  "version": "21.0.0.21",
+  "version": "21.0.0.26",
   "logo": "Wanamics90x90.png",
-  "runtime": "10.0",
+  "runtime": "11.0",
   "resourceExposurePolicy": 
     {
       "allowDebugging": true, 
@@ -20,6 +20,14 @@
         "from": 87400, 
         "to":   87419
       }
+  ],
+  "dependencies": [
+    {
+      "id": "7a129d06-5fd6-4fb6-b82b-0bf539c779d0",
+      "name": "_Exclude_Bank Deposits",
+      "publisher": "Microsoft",
+      "version": "20.0.37118.0"
+    }
   ],
   "features": [
     "NoImplicitWith",

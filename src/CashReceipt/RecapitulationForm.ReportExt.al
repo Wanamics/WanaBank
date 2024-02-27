@@ -33,6 +33,15 @@ reportextension 87400 "wan Recapitulation Form" extends "Recapitulation Form" //
             column(wanAppliesToID_Caption; FieldCaption("Applies-to ID"))
             {
             }
+
+        }
+        modify("Gen. Journal Line")
+        {
+            trigger OnAfterAfterGetRecord()
+            begin
+                "Gen. Journal Line"."Check Exported" := true;
+                "Gen. Journal Line".Modify(true);
+            end;
         }
     }
     requestpage

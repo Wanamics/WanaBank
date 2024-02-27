@@ -40,11 +40,27 @@ pageextension 87401 "wan Payment Reconcil. Journals" extends "Pmt. Reconciliatio
                     Xmlport.Run(Xmlport::"wan Bank Rec. Import CFONB000");
                 end;
             }
+            action(WanaBankImport)
+            {
+                ApplicationArea = All;
+                Image = Import;
+                Visible = WanaBankImportVisible;
+                ;
+                Caption = 'WanaBank Import';
+                trigger OnAction()
+                begin
+                    Codeunit.Run(Codeunit::"wan Bank Acc. Reconcil. Import", Rec);
+                end;
+            }
         }
-        addlast(Promoted)
+        addlast(Category_Process)
         {
             actionref(wanImportCFONB120_Promoted; wanImportCFONB120) { }
             actionref(wanImportCFONB000_Promoted; wanImportCFONB000) { }
+        }
+        addlast(Promoted)
+        {
+            actionref(WanaBankImport_Promoted; WanaBankImport) { }
         }
     }
     local procedure wanNoOfLines(): Integer
@@ -54,6 +70,17 @@ pageextension 87401 "wan Payment Reconcil. Journals" extends "Pmt. Reconciliatio
         BancAccReconcilisationLine.SetRange("Statement Type", Rec."Statement Type");
         BancAccReconcilisationLine.SetRange("Bank Account No.", Rec."Bank Account No.");
         BancAccReconcilisationLine.SetRange("Statement No.", Rec."Statement No.");
-        Exit(BancAccReconcilisationLine.Count());
+        exit(BancAccReconcilisationLine.Count());
+    end;
+
+    var
+        WanaBankImportVisible: Boolean;
+
+    trigger OnOpenPage()
+    var
+        BankAccount: Record "Bank Account";
+    begin
+        BankAccount.SetFilter("wan Import Object ID", '<> 0');
+        WanaBankImportVisible := not BankAccount.IsEmpty;
     end;
 }

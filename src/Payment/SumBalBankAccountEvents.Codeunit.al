@@ -1,6 +1,6 @@
 codeunit 87409 "wan Sum Bal. Bank Acct. Events"
 {
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Batch", 'OnBeforeCode', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Batch", OnBeforeCode, '', false, false)]
     local procedure OnBeforeCode(var GenJournalLine: Record "Gen. Journal Line"; PreviewMode: Boolean; CommitIsSuppressed: Boolean)
     var
         GenJournalLine2: Record "Gen. Journal Line";
@@ -11,6 +11,11 @@ codeunit 87409 "wan Sum Bal. Bank Acct. Events"
         GenJournalLine2.SetRange("Bal. Account Type", GenJournalLine2."Bal. Account Type"::"Bank Account");
         GenJournalLine2.SetFilter("Bal. Account No.", '<>%1', '');
         GenJournalLine2.SetRange("Exported to Payment File", true);
+        if not GenJournalLine2.IsEmpty then
+            SumBalBankAccount(GenJournalLine);
+
+        GenJournalLine2.SetRange("Exported to Payment File", false);
+        GenJournalLine2.SetRange("Check Exported", true); // Set by Print Check Remittance
         if not GenJournalLine2.IsEmpty then
             SumBalBankAccount(GenJournalLine);
     end;
@@ -75,7 +80,7 @@ codeunit 87409 "wan Sum Bal. Bank Acct. Events"
             until GenJnlLine.Next() = 0;
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnBeforeSkipRenumberDocumentNo', '', false, false)]
+    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", OnBeforeSkipRenumberDocumentNo, '', false, false)]
     local procedure OnBeforeSkipRenumberDocumentNo(GenJournalLine: Record "Gen. Journal Line"; var Result: Boolean; var IsHandled: Boolean)
     var
         GenJournalLine2: Record "Gen. Journal Line";

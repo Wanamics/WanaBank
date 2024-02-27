@@ -1,3 +1,4 @@
+/*
 page 87400 "wan Data Exch Field Details"
 {
     Caption = 'Bank transaction Details';
@@ -23,3 +24,4 @@ page 87400 "wan Data Exch Field Details"
     {
     }
 }
+*/

@@ -93,6 +93,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Bank Acc. Reconcil. Events - Method OnBeforeValidateEventAccountNo - NamedType CantBeBankAccountNoErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 782816195 - Method 1665861916 - NamedType 3258319901" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No bank transactions were imported. For example, because the transactions were imported in other bank account reconciliations, or because they are already applied to bank account ledger entries. You can view the applied transactions on the Bank Account Statement List page and on the Posted Payment Reconciliations page.</source>
+          <target>Aucune transaction bancaire n’a été importée, car les transactions ont, par exemple, été importées dans d’autres rapprochements bancaires ou parce qu’elles sont déjà lettrées aux écritures comptables du compte bancaire. Vous pouvez visualiser les transactions lettrées sur la page Liste des relevés de compte bancaire et sur la page Rapprochements paiement validés.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Bank Acc. Reconcil. Import - Method OnRun - NamedType NoTransactionsImportedMsg</note>
+        </trans-unit>
         <trans-unit id="Codeunit 716466780 - Method 326850813 - NamedType 2551578859" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sum. Bal. Bank Account</source>
           <target>Central. contrep. bancaire</target>
@@ -573,6 +579,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Methods - Control wan Direct Debit Installments - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 732080047 - Action 2810802726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4226890118">
+          <source>WanaBank Import</source>
+          <target>Import WanaBank</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Reconcil. Journals - Action WanaBankImport - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 732080047 - Action 2384563301 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4226890118">
           <source>Import CFONB120 (no separator)</source>
           <target>Import CFONB (sans séparateur)</target>
@@ -626,6 +638,18 @@
           <target>Envoyer avis de paiement</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Vendor Ledger Entries - Action wanSendRemittanceAdvice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 423562905 - Field 2069611295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Import Object ID</source>
+          <target>ID objet Import</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Bank Account - Field wan Import Object ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 423562905 - Field 1294205492 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Import Object Type</source>
+          <target>Type objet Import</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Bank Account - Field wan Import Object Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4156271111 - Field 3884173125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3566004263">
           <source>Direct Debit Installments</source>

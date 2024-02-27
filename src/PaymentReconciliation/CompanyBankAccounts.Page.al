@@ -137,7 +137,7 @@ page 87401 "wan Companies Bank Reconcil."
     var
         BankReconciliation, PaymentApplication : Record "Bank Acc. Reconciliation";
 
-    local procedure DrillDown(pStatementType: Integer)
+    local procedure DrillDown(pStatementType: Enum "Bank Acc. Rec. Stmt. Type")
     var
         PageID: Integer;
         BankAccReconciliation: Record "Bank Acc. Reconciliation";

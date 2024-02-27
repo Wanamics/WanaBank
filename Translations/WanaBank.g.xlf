@@ -78,6 +78,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Bank Acc. Reconcil. Events - Method OnBeforeValidateEventAccountNo - NamedType CantBeBankAccountNoErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 782816195 - Method 1665861916 - NamedType 3258319901" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No bank transactions were imported. For example, because the transactions were imported in other bank account reconciliations, or because they are already applied to bank account ledger entries. You can view the applied transactions on the Bank Account Statement List page and on the Posted Payment Reconciliations page.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Bank Acc. Reconcil. Import - Method OnRun - NamedType NoTransactionsImportedMsg</note>
+        </trans-unit>
         <trans-unit id="Codeunit 716466780 - Method 326850813 - NamedType 2551578859" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sum. Bal. Bank Account</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -137,11 +142,6 @@
           <source>Open</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page wan Companies Bank Reconcil. - Action EditJournal - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3096281778 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bank transaction Details</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page wan Data Exch Field Details - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3884173125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Direct Debit Installments</source>
@@ -448,6 +448,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Journal Line Details FactB - Control wanIBAN - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 252084076 - Control 1372524910 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3785228364">
+          <source>Specifies the text that was entered on the payment when the payment was made to the electronic bank account.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Application - Control wanBankAccReconLineDescription - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 252084076 - Control 1372524910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3785228364">
+          <source>Transaction Text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Application - Control wanBankAccReconLineDescription - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 713557453 - NamedType 438128090" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 713557453">
           <source>Remittance Advice</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -477,6 +487,11 @@
           <source>Direct Debit Installments</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Methods - Control wan Direct Debit Installments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 732080047 - Action 2810802726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4226890118">
+          <source>WanaBank Import</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Reconcil. Journals - Action WanaBankImport - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 732080047 - Action 2384563301 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4226890118">
           <source>Import CFONB120 (no separator)</source>
@@ -508,6 +523,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Text-to-Account Mapping - Action wanReorder - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3294239877 - Control 1953872701 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332154277">
+          <source>Specifies the balancing account to post amounts on payments or incoming documents that have this text to account mapping. The Bank Account option in the Bal. Source Type cannot be used in payment reconciliation journals.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Text-to-Account Mapping - Control wan Bal. Source No. - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3485660885 - NamedType 438128090" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3485660885">
           <source>Remittance Advice</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -522,6 +542,16 @@
           <source>Send Remittance Advice</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Vendor Ledger Entries - Action wanSendRemittanceAdvice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 423562905 - Field 2069611295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Import Object ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Bank Account - Field wan Import Object ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 423562905 - Field 1294205492 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Import Object Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Bank Account - Field wan Import Object Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4156271111 - Field 3884173125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3566004263">
           <source>Direct Debit Installments</source>
