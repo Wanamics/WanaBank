@@ -78,11 +78,11 @@ reportextension 87402 "wan Remittance Advice-Entries" extends "Remittance Advice
 
     var
         SupportedOutputMethod: Option Print,Preview,PDF,Email,Word,XML;
-        [InDataSet]
+        // [InDataSet]
         ChosenOutputMethod: Integer;
-        [InDataSet]
+        // [InDataSet]
         PrintIfEmailIsMissing: Boolean;
-        [InDataSet]
+        // [InDataSet]
         ShowPrintIfEmailIsMissing: Boolean;
         CompanyInformation: Record "Company Information";
         CompanyAddress, CompanyContactInfo, CompanyLegalInfo : Text;

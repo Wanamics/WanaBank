@@ -423,6 +423,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType DateOrBalanceDoesntMatchErr</note>
         </trans-unit>
+        <trans-unit id="XmlPort 580001984 - Method 1069624050 - NamedType 2294662597" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do tou want to continue?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType ConfirmMsg</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 580001984 - Method 1069624050 - NamedType 3275962655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>is not defined in company %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType IsEmptyInCompanyLbl</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1642755968 - Control 880136295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1890430176">
+          <source>No. of Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Bank Deposit Subform - Control NoOfLines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1642755968 - Change 386377809 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1890430176">
+          <source>Total Deposit Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Bank Deposit Subform - Change TotalDepositLines - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1147269286 - Action 1185346791 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
           <source>Post receipts of a payment for sales invoices. You can do this after the direct-debit collection is successfully processed by the bank.</source>
           <note from="Developer" annotates="general" priority="2"></note>

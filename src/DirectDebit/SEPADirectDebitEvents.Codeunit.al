@@ -52,7 +52,9 @@ codeunit 87402 "wan SEPA Direct Debit Events"
     begin
         xDocAtt.SetRange("Table ID", Database::"SEPA Direct Debit Mandate");
         xDocAtt.SetRange("No.", xRec.Id);
-        if xDocAtt.FindSet(true, true) then
+        // if xDocAtt.FindSet(true, true) then
+        // 'FindSet' is being deprecated in the versions: '11.0' or greater. This method has been deprecated because the parameter 'UpdateKey' is not used by the runtime. Use the overload without the 'UpdateKey' parameter instead. This warning will become an error in a future release.        
+        if xDocAtt.FindSet(true) then
             repeat
                 DocAtt.Copy(xDocAtt);
                 DocAtt.Rename(Database::"SEPA Direct Debit Mandate", Rec.ID, xDocAtt."Document Type", xDocAtt."Line No.", xDocAtt.ID);

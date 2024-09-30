@@ -171,12 +171,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page wan Companies Bank Reconcil. - Action EditJournal - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3096281778 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bank transaction Details</source>
-          <target>Détail transaction bancaire</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page wan Data Exch Field Details - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 3884173125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Direct Debit Installments</source>
           <target>Fractionnements prélèvement</target>
@@ -513,6 +507,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType DateOrBalanceDoesntMatchErr</note>
         </trans-unit>
+        <trans-unit id="XmlPort 580001984 - Method 1069624050 - NamedType 2294662597" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do tou want to continue?</source>
+          <target>Voulez-vous continuer ?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType ConfirmMsg</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 580001984 - Method 1069624050 - NamedType 3275962655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>is not defined in company %1</source>
+          <target>n'est pas défini poyr la société %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB120 - Method StartingBalance - NamedType IsEmptyInCompanyLbl</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1642755968 - Control 880136295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1890430176">
+          <source>No. of Lines</source>
+          <target>Nbre de lignes</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Bank Deposit Subform - Control NoOfLines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1642755968 - Change 386377809 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1890430176">
+          <source>Total Deposit Lines</source>
+          <target>Montant total des lignes</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Bank Deposit Subform - Change TotalDepositLines - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1147269286 - Action 1185346791 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
           <source>Post receipts of a payment for sales invoices. You can do this after the direct-debit collection is successfully processed by the bank.</source>
           <target>Publiez des reçus pour un paiement concernant des factures vente. Vous pouvez réaliser cette opération après que le prélèvement a bien été traité par la banque.</target>
@@ -542,6 +560,18 @@
           <target>IBAN</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Journal Line Details FactB - Control wanIBAN - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 252084076 - Control 1372524910 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3785228364">
+          <source>Specifies the text that was entered on the payment when the payment was made to the electronic bank account.</source>
+          <target>Spécifie le texte saisi dans le paiement lorsque le paiement a été effectué vers le compte bancaire électronique.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Application - Control wanBankAccReconLineDescription - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 252084076 - Control 1372524910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3785228364">
+          <source>Transaction Text</source>
+          <target>Texte transaction</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Payment Application - Control wanBankAccReconLineDescription - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 713557453 - NamedType 438128090" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 713557453">
           <source>Remittance Advice</source>
@@ -620,6 +650,12 @@
           <target>Classer par longueur décr.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Text-to-Account Mapping - Action wanReorder - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3294239877 - Control 1953872701 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332154277">
+          <source>Specifies the balancing account to post amounts on payments or incoming documents that have this text to account mapping. The Bank Account option in the Bal. Source Type cannot be used in payment reconciliation journals.</source>
+          <target>Spécifie le compte contrepartie pour lequel valider les montants des paiements ou des documents entrants avec ce mappage de texte et de compte. L'option Compte bancaire du champ Type origine solde ne peut pas être utilisée dans les feuilles rapprochement bancaire.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Text-to-Account Mapping - Control wan Bal. Source No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3485660885 - NamedType 438128090" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3485660885">
           <source>Remittance Advice</source>

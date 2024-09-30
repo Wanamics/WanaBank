@@ -4,7 +4,7 @@ pageextension 87415 "wan Bank Data Exch Def Card" extends "Data Exch Def Card"
     {
         addbefore("Column Separator")
         {
-            field("Line Separator"; Rec."Line Separator") { Visible = false; }
+            field("Line Separator"; Rec."Line Separator") { Visible = false; ApplicationArea = All; }
         }
     }
 }

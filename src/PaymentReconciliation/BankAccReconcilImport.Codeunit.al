@@ -11,7 +11,7 @@ codeunit 87405 "wan Bank Acc. Reconcil. Import"
         NoTransactionsImportedMsg: Label 'No bank transactions were imported. For example, because the transactions were imported in other bank account reconciliations, or because they are already applied to bank account ledger entries. You can view the applied transactions on the Bank Account Statement List page and on the Posted Payment Reconciliations page.';
     begin
         if not SelectBankAccount(BankAccount) then
-            exit; //Error(''); // Codeunit.Run return false to IsHandled then continue with standard processing
+            Error(''); // Codeunit.Run return false to IsHandled then continue with standard processing
         //?????????????? BankAccount.LockTable();
         LastStatementNo := BankAccount."Last Statement No.";
         CreateNewBankPaymentAppBatch(BankAccount."No.", BankAccReconciliation);
