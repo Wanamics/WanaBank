@@ -3,6 +3,7 @@ report 87411 "wan Post Direct Debit Collect."
 {
     Caption = 'Post Direct Debit Coll. & Bank Sum.';
     ProcessingOnly = true;
+    UsageCategory = None;
 
     dataset
     {
@@ -345,12 +346,14 @@ report 87411 "wan Post Direct Debit Collect."
     local procedure wanPreDataItem()
     var
         GenJournalTemplate: Record "Gen. Journal Template";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        // NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeries: Codeunit "No. Series";
     begin
         GenJournalTemplate.Get(GeneralJournalTemplateName);
         GenJnlLine."Source Code" := GenJournalTemplate."Source Code";
         GenJnlLine."Posting No. Series" := GenJnlBatch."Posting No. Series";
-        GenJnlLine."Document No." := NoSeriesMgt.GetNextNo(GenJnlBatch."No. Series", GenJnlLine."Posting Date", true);
+        // GenJnlLine."Document No." := NoSeriesMgt.GetNextNo(GenJnlBatch."No. Series", GenJnlLine."Posting Date", true);
+        GenJnlLine."Document No." := NoSeries.GetNextNo(GenJnlBatch."No. Series", GenJnlLine."Posting Date", true);
         wanBankGenJnlLine."Journal Template Name" := GeneralJournalTemplateName;
         wanBankGenJnlLine."Journal Batch Name" := GeneralJournalBatchName;
         wanBankGenJnlLine."Source Code" := GenJournalTemplate."Source Code";

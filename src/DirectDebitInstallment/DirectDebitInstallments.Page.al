@@ -1,6 +1,7 @@
 page 87410 "wan Direct Debit Installments"
 {
     ApplicationArea = All;
+    UsageCategory = None;
     Caption = 'Direct Debit Installments';
     PageType = List;
     SourceTable = "wan Direct Debit Installment";

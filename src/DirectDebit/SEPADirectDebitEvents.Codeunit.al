@@ -1,6 +1,6 @@
 codeunit 87402 "wan SEPA Direct Debit Events"
 {
-    [EventSubscriber(ObjectType::Table, Database::"Document Attachment", 'OnAfterInitFieldsFromRecRef', '', false, false)]
+    [EventSubscriber(ObjectType::Table, Database::"Document Attachment", OnAfterInitFieldsFromRecRef, '', false, false)]
     local procedure OnAfterInitFieldsFromRecRef(var DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef)
     var
         FieldRef: FieldRef;
@@ -13,7 +13,8 @@ codeunit 87402 "wan SEPA Direct Debit Events"
         end;
     end;
 
-    [EventSubscriber(ObjectType::Page, Page::"Document Attachment Factbox", 'OnBeforeDrillDown', '', false, false)]
+    // [EventSubscriber(ObjectType::Page, Page::"Document Attachment Factbox", 'OnBeforeDrillDown', '', false, false)]
+    [EventSubscriber(ObjectType::Page, Page::"Doc. Attachment List Factbox", OnBeforeDocumentAttachmentDetailsRunModal, '', false, false)]
     local procedure OnBeforeDrillDown(DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef)
     var
         SDDMandate: Record "SEPA Direct Debit Mandate";
@@ -25,7 +26,7 @@ codeunit 87402 "wan SEPA Direct Debit Events"
         end;
     end;
 
-    [EventSubscriber(ObjectType::Page, Page::"Document Attachment Details", 'OnAfterOpenForRecRef', '', false, false)]
+    [EventSubscriber(ObjectType::Page, Page::"Document Attachment Details", OnAfterOpenForRecRef, '', false, false)]
     local procedure OnAfterOpenForRecRef(var DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef; var FlowFieldsEditable: Boolean)
     var
         FieldRef: FieldRef;
@@ -38,14 +39,14 @@ codeunit 87402 "wan SEPA Direct Debit Events"
         end;
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"SEPA Direct Debit Mandate", 'OnBeforeRenameEvent', '', false, false)]
+    [EventSubscriber(ObjectType::Table, Database::"SEPA Direct Debit Mandate", OnBeforeRenameEvent, '', false, false)]
     local procedure OnBeforeRenameSDDMandate(var Rec: Record "SEPA Direct Debit Mandate"; var xRec: Record "SEPA Direct Debit Mandate"; RunTrigger: Boolean)
     begin
         Rec.TestField(Closed, false);
         Rec.TestField("Debit Counter", 0);
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"SEPA Direct Debit Mandate", 'OnAfterRenameEvent', '', false, false)]
+    [EventSubscriber(ObjectType::Table, Database::"SEPA Direct Debit Mandate", OnAfterRenameEvent, '', false, false)]
     local procedure OnAfterRenameSDDMandate(var Rec: Record "SEPA Direct Debit Mandate"; var xRec: Record "SEPA Direct Debit Mandate"; RunTrigger: Boolean)
     var
         xDocAtt, DocAtt : Record "Document Attachment";

@@ -2,6 +2,41 @@ pageextension 87411 "wan Direct Debit Collect. Ent." extends "Direct Debit Colle
 {
     actions
     {
+        addlast(processing)
+        {
+            action(wanDDTransferDate)
+            {
+                ApplicationArea = Suite;
+                Caption = 'Set Transfer Date';
+                Ellipsis = true;
+                Image = UpdateDescription;
+                ToolTip = 'You can set a unique Transfer Date for all collection entries.';
+                trigger OnAction()
+                begin
+                    Report.RunModal(Report::"WanaBank DD Set Transfer Date", true, false, Rec);
+                    CurrPage.Update(false);
+                end;
+            }
+            action(wanDDMandateID)
+            {
+                ApplicationArea = Suite;
+                Caption = 'Set Default Mandate ID';
+                Ellipsis = true;
+                Image = UpdateDescription;
+                ToolTip = 'You can set missing Mandate ID from the unique client''s one.';
+                trigger OnAction()
+                var
+                    Selection: Record "Direct Debit Collection Entry";
+                    ConfirmMsg: Label 'Do you want to set missing Mandate ID from the unique client''s one, for %1 line(s)?';
+                begin
+                    CurrPage.SetSelectionFilter(Selection);
+                    Selection.SetRange("Mandate ID", '');
+                    if Confirm(ConfirmMsg, false, Selection.Count) then
+                        Codeunit.Run(Codeunit::"WanaBank DD Set Mandate ID", Selection);
+                    // CurrPage.Update(false);
+                end;
+            }
+        }
         modify(Post)
         {
             Visible = false;

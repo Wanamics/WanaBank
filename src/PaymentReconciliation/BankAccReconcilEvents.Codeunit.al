@@ -15,20 +15,21 @@ codeunit 87401 "wan Bank Acc. Reconcil. Events"
             Rec.FieldError("Account No.", CantBeBankAccountNoErr);
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Bank Acc. Reconciliation Post", OnPostPaymentApplicationsOnAfterInitGenJnlLine, '', false, false)]
-    local procedure OnPostPaymentApplicationsOnAfterInitGenJnlLine(var GenJournalLine: Record "Gen. Journal Line"; BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line")
-    begin
-        if GenJournalLine.Description = '' then
-            GenJournalLine.Description := BankAccReconciliationLine."Transaction Text";
-    end;
+    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Bank Acc. Reconciliation Post", OnPostPaymentApplicationsOnAfterInitGenJnlLine, '', false, false)]
+    // local procedure OnPostPaymentApplicationsOnAfterInitGenJnlLine(var GenJournalLine: Record "Gen. Journal Line"; BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line")
+    // begin
+    //     if GenJournalLine.Description = '' then
+    //         GenJournalLine.Description := BankAccReconciliationLine."Transaction Text";
+    // end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Bank Acc. Reconciliation Post", OnTransferToPostPmtApplnOnBeforePostedPmtReconLineInsert, '', false, false)]
-    local procedure OnTransferToPostPmtApplnOnBeforePostedPmtReconLineInsert(var PostedPmtReconLine: Record "Posted Payment Recon. Line"; BankAccReconLine: Record "Bank Acc. Reconciliation Line")
-    begin
-        if PostedPmtReconLine.Description = '' then
-            PostedPmtReconLine.Description := BankAccReconLine."Transaction Text";
-    end;
+    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Bank Acc. Reconciliation Post", OnTransferToPostPmtApplnOnBeforePostedPmtReconLineInsert, '', false, false)]
+    // local procedure OnTransferToPostPmtApplnOnBeforePostedPmtReconLineInsert(var PostedPmtReconLine: Record "Posted Payment Recon. Line"; BankAccReconLine: Record "Bank Acc. Reconciliation Line")
+    // begin
+    //     if PostedPmtReconLine.Description = '' then
+    //         PostedPmtReconLine.Description := BankAccReconLine."Transaction Text";
+    // end;
 
+#if MOVED
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Bank Acc. Reconciliation Post", OnBeforePost, '', false, false)]
     local procedure OnBeforePost(var BankAccReconciliation: Record "Bank Acc. Reconciliation"; var BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line")
     var
@@ -43,18 +44,19 @@ codeunit 87401 "wan Bank Acc. Reconcil. Events"
             if BankAccReconciliationLine.FindLast() and (BankAccReconciliation."Statement Date" < BankAccReconciliationLine."Transaction Date") then
                 Message(ImportedLinesAfterStatementDateMsg);
     end;
+#endif
 
-    local procedure InsertNullLine(BankAccReconciliation: Record "Bank Acc. Reconciliation"; var BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line")
-    begin
-        BankAccReconciliationLine.Init();
-        BankAccReconciliationLine."Statement Type" := BankAccReconciliation."Statement Type";
-        BankAccReconciliationLine."Bank Account No." := BankAccReconciliation."Bank Account No.";
-        BankAccReconciliationLine."Statement No." := BankAccReconciliation."Statement No.";
-        BankAccReconciliationLine."Transaction Date" := BankAccReconciliation."Statement Date";
-        BankAccReconciliationLine."Account Type" := BankAccReconciliationLine."Account Type"::"Bank Account";
-        BankAccReconciliationLine."Account No." := BankAccReconciliation."Bank Account No.";
-        BankAccReconciliationLine.Insert();
-    end;
+    // local procedure InsertNullLine(BankAccReconciliation: Record "Bank Acc. Reconciliation"; var BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line")
+    // begin
+    //     BankAccReconciliationLine.Init();
+    //     BankAccReconciliationLine."Statement Type" := BankAccReconciliation."Statement Type";
+    //     BankAccReconciliationLine."Bank Account No." := BankAccReconciliation."Bank Account No.";
+    //     BankAccReconciliationLine."Statement No." := BankAccReconciliation."Statement No.";
+    //     BankAccReconciliationLine."Transaction Date" := BankAccReconciliation."Statement Date";
+    //     BankAccReconciliationLine."Account Type" := BankAccReconciliationLine."Account Type"::"Bank Account";
+    //     BankAccReconciliationLine."Account No." := BankAccReconciliation."Bank Account No.";
+    //     BankAccReconciliationLine.Insert();
+    // end;
 
     [EventSubscriber(ObjectType::Table, Database::"Bank Acc. Reconciliation", OnBeforeDeleteEvent, '', false, false)]
     local procedure OnBeforeDeleteEvent(var Rec: Record "Bank Acc. Reconciliation")

@@ -24,6 +24,7 @@ pageextension 87403 "wan Text-to-Account Mapping" extends "Text-to-Account Mappi
             {
                 ApplicationArea = All;
                 Caption = 'Order by decreasing length';
+                Image = SortDescending;
 
                 trigger OnAction()
                 begin

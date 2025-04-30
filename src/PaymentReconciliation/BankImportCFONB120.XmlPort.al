@@ -259,7 +259,8 @@ xmlport 87401 "wan Bank Rec. Import CFONB120"
             exit;
         // DetailLineNo += 1;
         // DataExchField.InsertRec(DataExch."Entry No.", LineNo, DetailLineNo, _Description, '');
-        BankAccReconciliationLine.Validate("Transaction Text", CopyStr(BankAccReconciliationLine."Transaction Text" + ' ' + _Description, MaxStrLen(BankAccReconciliationLine."Transaction Text")));
+        // BankAccReconciliationLine.Validate("Transaction Text", CopyStr(BankAccReconciliationLine."Transaction Text" + ' ' + _Description, MaxStrLen(BankAccReconciliationLine."Transaction Text")));
+        BankAccReconciliationLine.Validate("Transaction Text", CopyStr(BankAccReconciliationLine."Transaction Text" + ' ' + _Description, 1, MaxStrLen(BankAccReconciliationLine."Transaction Text")));
         BankAccReconciliationLine.Modify();
     end;
 

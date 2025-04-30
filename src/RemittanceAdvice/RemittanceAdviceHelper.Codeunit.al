@@ -58,8 +58,6 @@ codeunit 87403 "wan Remittance Advice Helper"
     end;
 
     procedure GetRecipientBankAccount(var pVendorBankAccount: Record "Vendor Bank Account"; pAccountNo: Code[20]; pRecipientBankAccount: code[20]): Text
-    var
-        CustomerBankAccount: Record "Customer Bank Account";
     begin
         if not pVendorBankAccount.Get(pAccountNo, pRecipientBankAccount) then
             Clear(pVendorBankAccount);

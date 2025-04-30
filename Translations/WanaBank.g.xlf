@@ -68,11 +68,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Bank Acc. Reconcil. Events - Method OnBeforeDeleteEvent - NamedType MustBeTheLastOneErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 4250744797 - Method 4254706052 - NamedType 1965274455" size-unit="char" translate="yes" xml:space="preserve">
-          <source>There are lines on the imported bank statement with dates that are after the statement date.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Bank Acc. Reconcil. Events - Method OnBeforePost - NamedType ImportedLinesAfterStatementDateMsg</note>
-        </trans-unit>
         <trans-unit id="Codeunit 4250744797 - Method 3506521230 - NamedType 2638570128" size-unit="char" translate="yes" xml:space="preserve">
           <source>can't be the same bank account No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -398,6 +393,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wanaBank Account - Trial Bal. - ReportLabel PeriodDebitAmtCaption</note>
         </trans-unit>
+        <trans-unit id="Report 262326566 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DirectDebit Set Transfer Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report WanaBank DD Set Transfer Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 262326566 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report WanaBank DD Set Transfer Date - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 262326566 - Control 3270563529 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New Transfer Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report WanaBank DD Set Transfer Date - Control TransferDate - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Query 848360121 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>wan Sum Bal. Bank Acct.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -442,6 +452,31 @@
           <source>Total Deposit Lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Bank Deposit Subform - Change TotalDepositLines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1147269286 - Action 4193498773 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
+          <source>You can set missing Mandate ID from the unique client's one.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collect. Ent. - Action wanDDMandateID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1147269286 - Action 4193498773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
+          <source>Set Default Mandate ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collect. Ent. - Action wanDDMandateID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1147269286 - Action 4193498773 - Method 1377591017 - NamedType 2294662597" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1147269286">
+          <source>Do you want to set missing Mandate ID from the unique client's one, for %1 line(s)?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collect. Ent. - Action wanDDMandateID - Method OnAction - NamedType ConfirmMsg</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1147269286 - Action 251736417 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
+          <source>You can set a unique Transfer Date for all collection entries.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collect. Ent. - Action wanDDTransferDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1147269286 - Action 251736417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
+          <source>Set Transfer Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collect. Ent. - Action wanDDTransferDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1147269286 - Action 1185346791 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
           <source>Post receipts of a payment for sales invoices. You can do this after the direct-debit collection is successfully processed by the bank.</source>

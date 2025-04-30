@@ -24,6 +24,7 @@ pageextension 87410 "wan Payment Methods" extends "Payment Methods"
             {
                 ApplicationArea = All;
                 Caption = 'Direct Debit Installments';
+                Image = Installments;
                 RunObject = page "wan Direct Debit Installments";
                 RunPageLink = "Payment method Code" = field(Code);
                 trigger OnAction()
