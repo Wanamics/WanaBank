@@ -1,4 +1,4 @@
-reportextension 87400 "wan Recapitulation Form" extends "Recapitulation Form" // 10843 Do not exists in W1
+reportextension 87400 "wan Recapitulation Form" extends "wan Recapitulation Form" // 10843 Do not exists in W1
 {
     RDLCLayout = './src/CashReceipt/RecapitulationForm.rdl';
 

@@ -3,6 +3,93 @@
   <file datatype="xml" source-language="en-US" target-language="fr-FR" original="WanaBank.g.xlf">
     <body>
       <group id="body">
+        <trans-unit id="Report 2747227734 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recapitulation Form</source>
+          <target>Bordereau de remise</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Recapitulation Form - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2747227734 - NamedType 3250696314" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Checks:</source>
+          <target>Chèques :</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Recapitulation Form - NamedType Checks_CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2747227734 - NamedType 1566767540" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Name</source>
+          <target>Nom du débiteur</target>
+          <target>[NAB: SUGGESTION]Nom du client</target>
+          <target>[NAB: SUGGESTION]Nom client</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Recapitulation Form - NamedType Customer_NameCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2747227734 - NamedType 1428681763" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <target>N° client</target>
+          <target>[NAB: SUGGESTION]N° de client</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Recapitulation Form - NamedType Customer_No_CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2747227734 - NamedType 1524898039" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Amount</source>
+          <target>Montant total</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Recapitulation Form - NamedType GenJnlLine_AmountCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2747227734 - NamedType 204486368" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <target>Montant</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Recapitulation Form - NamedType Gen__Journal_Line__AmountCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2747227734 - NamedType 3831493575" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Code</source>
+          <target>Code devise</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Recapitulation Form - NamedType Gen__Journal_Line___Currency_Code_CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2747227734 - NamedType 1296482224" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total number of checks:</source>
+          <target>Nombre total de chèques :</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Recapitulation Form - NamedType LineNumCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2747227734 - NamedType 3211442742" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <target>N°</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Recapitulation Form - NamedType No_CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2747227734 - NamedType 3375070075" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recapitulation Form</source>
+          <target>Bordereau de remise</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Recapitulation Form - NamedType Recapitulation_FormCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2747227734 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The %1</source>
+          <target>Le %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Recapitulation Form - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Query 848360121 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>wan Sum Bal. Bank Acct.</source>
+          <target>Centralisation contrepartie banque</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query wan Sum Bal. Bank Acct. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 10638647 - Control 606477114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3603089623">
+          <source>Summarize Bal. Amount</source>
+          <target>Totaliser contrepartie</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan General Journal Batches - Control wan Summarize Bal. Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 137920953 - Field 3350616922 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3690479385">
+          <source>Summarize Bal. Amount</source>
+          <target>Totaliser contrepartie</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Batch - Field Summarize Bal. Amount - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2137012 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>MultiComp. Bank Account</source>
           <target>Rapprochements bancaires par société</target>
@@ -92,12 +179,6 @@
           <target>Aucune transaction bancaire n’a été importée, car les transactions ont, par exemple, été importées dans d’autres rapprochements bancaires ou parce qu’elles sont déjà lettrées aux écritures comptables du compte bancaire. Vous pouvez visualiser les transactions lettrées sur la page Liste des relevés de compte bancaire et sur la page Rapprochements paiement validés.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Bank Acc. Reconcil. Import - Method OnRun - NamedType NoTransactionsImportedMsg</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 716466780 - Method 326850813 - NamedType 2551578859" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sum. Bal. Bank Account</source>
-          <target>Central. contrep. bancaire</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Sum Bal. Bank Acct. Events - Method SumBalBankAccount - NamedType SumBalBankAccountLbl</note>
         </trans-unit>
         <trans-unit id="Page 4004623534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bank Account Reconcil. per Company</source>
@@ -489,12 +570,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report WanaBank DD Set Transfer Date - Control TransferDate - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Query 848360121 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>wan Sum Bal. Bank Acct.</source>
-          <target>Centralisation contrepartie banque</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Query wan Sum Bal. Bank Acct. - Property Caption</note>
-        </trans-unit>
         <trans-unit id="XmlPort 1472915337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Import Bank Statement (no separator)</source>
           <target>Import CFONB (sans séparateur)</target>
@@ -543,6 +618,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Bank Deposit Subform - Change TotalDepositLines - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1147269286 - Action 253518499 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
+          <source>Cancel Reject</source>
+          <target>Annuler rejet</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collect. Ent. - Action wanCancelReject - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1147269286 - Action 253518499 - Method 1377591017 - NamedType 1494496561" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1147269286">
+          <source>Do you want to cancel reject this collection entry?</source>
+          <target>Voulez-vous annuler le rejet pour cette ligne ?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collect. Ent. - Action wanCancelReject - Method OnAction - NamedType CancelRejectQst</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1147269286 - Action 4193498773 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
           <source>You can set missing Mandate ID from the unique client's one.</source>
           <target>Permet de compléter ID mandat des lignes sélectionnées à partir de l'unique mandat du client concerné.</target>
@@ -569,9 +656,28 @@
         </trans-unit>
         <trans-unit id="PageExtension 1147269286 - Action 251736417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
           <source>Set Transfer Date</source>
-          <target>Définir Date transfer unique</target>
+          <target>Définir Date transfert unique</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collect. Ent. - Action wanDDTransferDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1147269286 - Action 675166556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
+          <source>Error Filter</source>
+          <target>Filtrer les erreurs</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collect. Ent. - Action wanErrorFilter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1147269286 - Action 1226617294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
+          <source>Show All</source>
+          <target>Afficher tout</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collect. Ent. - Action wanShowAll - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1147269286 - Action 3582813500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
+          <source>Show Errors</source>
+          <target>Afficher erreurs</target>
+          <target>[NAB: SUGGESTION]Afficher les erreurs</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Direct Debit Collect. Ent. - Action wanShowErrors - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1147269286 - Action 1185346791 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1624315803">
           <source>Post receipts of a payment for sales invoices. You can do this after the direct-debit collection is successfully processed by the bank.</source>
@@ -716,6 +822,18 @@
           <target>Envoyer avis de paiement</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Vendor Ledger Entries - Action wanSendRemittanceAdvice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1347940941 - Action 2392764749 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1638686336">
+          <source>View a list of checks remitted to the bank. The header shows the names and addresses of the company and bank. The body shows the list of checks. The footer shows the total of the remittance and the number of checks. Typically, you give this report to your bank with the checks at remittance.</source>
+          <target>Affichez la liste des chèques remis à la banque. L'en-tête reprend les noms et adresses de la société et de la banque. Le corps affiche la liste des chèques. Le pied de page indique le total de la remise ainsi que le nombre de chèques.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wanaBank Cash Receipt Journal - Action wanPrintCheckRemittanceReport - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1347940941 - Action 2392764749 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1638686336">
+          <source>Print Check Remittance Report</source>
+          <target>Imprimer bordereau de remise</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wanaBank Cash Receipt Journal - Action wanPrintCheckRemittanceReport - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 423562905 - Field 2069611295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
           <source>Import Object ID</source>

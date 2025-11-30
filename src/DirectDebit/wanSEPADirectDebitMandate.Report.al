@@ -3,7 +3,7 @@ report 87406 "wan SEPA Direct Debit Mandate"
     Caption = 'SEPA Direct Debit Mandate';
     UsageCategory = None;
     DefaultLayout = Word;
-    WordLayout = './src/DirectDebit/SEPADirectDebitMandate.docx';
+    WordLayout = './ReportLayouts/SEPADirectDebitMandate.docx';
     dataset
     {
         dataitem("Company Information"; "Company Information")

@@ -2,7 +2,7 @@
   "id": "b1cd6680-be5f-4f76-b1f3-bcc213c5558f",
   "name": "WanaBank",
   "publisher": "Wanamics",
-  "version": "25.0.0.00",
+  "version": "27.0.0.0",
   "logo": "Wanamics90x90.png",
   "runtime": "14.0",
   "resourceExposurePolicy": 
@@ -14,7 +14,7 @@
   "target": "Cloud",
   "platform": "21.0.0.0",
   "application": "21.0.0.0",
-  "contextSensitiveHelpUrl": "https://www.wanamics.fr/WanaBank/",
+ "contextSensitiveHelpUrl": "https://github.com/Wanamics/WanaBank?tab=readme-ov-file#extension-wanabank",
   "idRanges": [
       {
         "from": 87400, 

@@ -1,7 +1,7 @@
 report 87400 "wan Bank Acc. Reconcil."
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './src/PaymentReconciliation/BankAccReconcil.rdl';
+    RDLCLayout = './ReportLayouts/BankAccReconcil.rdl';
     ApplicationArea = All;
     Caption = 'Bank Account Reconciliation';
     UsageCategory = ReportsAndAnalysis;

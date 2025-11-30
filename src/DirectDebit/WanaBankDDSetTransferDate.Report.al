@@ -10,21 +10,24 @@ report 87402 "WanaBank DD Set Transfer Date"
         dataitem(DirectDebitCollectionEntry; "Direct Debit Collection Entry")
         {
             DataItemTableView = sorting("Direct Debit Collection No.", "Entry No.");
-            trigger OnPreDataItem()
-            begin
-                SetFilter("Transfer Date", '<>%1', NewTransferDate);
-                ModifyAll("Transfer Date", NewTransferDate, true);
-                SetRange("Transfer Date");
-            end;
-            // trigger OnAfterGetRecord()
+            // trigger OnPreDataItem()
             // begin
-            //     if ("Transfer Date" <> NewTransferDate) or ("Mandate ID" = '') then begin
-            //         Validate("Transfer Date", NewTransferDate);
-            //         if "Mandate ID" = '' then
-            //             SetDefaultMandateID(DirectDebitCollectionEntry);
-            //         Modify(true);
-            //     end;
+            //     SetFilter("Transfer Date", '<>%1', NewTransferDate);
+            //     ModifyAll("Transfer Date", NewTransferDate, true);
+            //     SetRange("Transfer Date");
             // end;
+            trigger OnAfterGetRecord()
+            begin
+                Validate("Transfer Date", NewTransferDate);
+                Modify(true);
+                Codeunit.Run(Codeunit::"SEPA DD-Check Line", DirectDebitCollectionEntry);
+                // if ("Transfer Date" <> NewTransferDate) or ("Mandate ID" = '') then begin
+                //     Validate("Transfer Date", NewTransferDate);
+                //     if "Mandate ID" = '' then
+                //         SetDefaultMandateID(DirectDebitCollectionEntry);
+                //     Modify(true);
+                // end;
+            end;
         }
     }
     requestpage

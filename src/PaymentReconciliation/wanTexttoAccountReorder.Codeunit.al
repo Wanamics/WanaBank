@@ -3,7 +3,7 @@ codeunit 87404 "wan Text to Account Reorder"
     TableNo = "Text-to-Account Mapping";
     trigger OnRun()
     var
-        NextRec : Record "Text-to-Account Mapping";
+        NextRec: Record "Text-to-Account Mapping";
         i, j : Integer;
         Temp: Record "Text-to-Account Mapping" temporary;
     begin

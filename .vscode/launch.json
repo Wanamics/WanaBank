@@ -67,5 +67,23 @@
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true
         }
+        ,
+        {
+            "name": "Surcotec Dev",
+            "request": "launch",
+            "type": "al",
+            "server": "https://businesscentral.dynamics.com/",
+            "tenant":"ba217f05-1ceb-4441-b746-c7f997081f1c",
+            "environmentType": "Sandbox",
+            "environmentName": "Surcotec_Dev",
+            "startupCompany": "Surcotec",
+            "breakOnError": "ExcludeTry",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            // "schemaUpdateMode": "ForceSync",
+            // "startupObjectId": 9022,
+            "startupObjectType": "Page"
+            }
     ]
 }

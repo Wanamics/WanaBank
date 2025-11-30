@@ -1,10 +1,10 @@
-reportextension 87402 "wan Remittance Advice-Entries" extends "Remittance Advice - Entries"
+reportextension 87401 "wan Remittance Advice-Journal" extends "Remittance Advice - Journal"
 {
-    WordLayout = './src/RemittanceAdvice/RemittanceAdviceEntries.docx';
+    WordLayout = './ReportLayouts/RemittanceAdviceJournal.docx';
 
     dataset
     {
-        add("Vendor Ledger Entry")
+        add(VendLoop)
         {
             column(wanCompanyPicture; CompanyInformation.Picture) { }
             column(wanCompanyAddress; CompanyAddress) { }
@@ -14,8 +14,8 @@ reportextension 87402 "wan Remittance Advice-Entries" extends "Remittance Advice
             column(wanVendorAddress; RemittanceAdviceHelper.VendorAddress(Vendor)) { }
             column(wanRemittanceAdvice; RemittanceAdviceLbl) { }
             column(wanVendorBankAccountCaption; RecipientBankAccountLbl) { }
-            column(wanPaymentMethodDescription; RemittanceAdviceHelper.GetPaymentMethod("Vendor Ledger Entry"."Payment Method Code", Vendor."Language Code")) { }
-            column(wanVendorBankAccount; RemittanceAdviceHelper.GetRecipientBankAccount(VendorBankAccount, "Vendor Ledger Entry"."Vendor No.", "Vendor Ledger Entry"."Recipient Bank Account")) { }
+            column(wanPaymentMethodDescription; RemittanceAdviceHelper.GetPaymentMethod("Gen. Journal Line"."Payment Method Code", Vendor."Language Code")) { }
+            column(wanVendorBankAccount; RemittanceAdviceHelper.GetRecipientBankAccount(VendorBankAccount, "Gen. Journal Line"."Account No.", "Gen. Journal Line"."Recipient Bank Account")) { }
             column(wanVendorBankAccountName; VendorBankAccount.Name) { }
             column(wanVendorBankAccountIBAN; VendorBankAccount.IBAN) { }
             column(wanDocumentDateCaption; "Vendor Ledger Entry".FieldCaption("Document Date")) { }
@@ -91,7 +91,6 @@ reportextension 87402 "wan Remittance Advice-Entries" extends "Remittance Advice
         PaymentAmountLbl: Label 'Paid amount';
         PaymentDiscountAmountLbl: Label 'Pmt. Disc. Amount';
         RecipientBankAccountLbl: Label 'to your bank account:';
-        Vendor: Record Vendor;
         VendorBankAccount: Record "Vendor Bank Account";
         RemittanceAdviceHelper: Codeunit "wan Remittance Advice Helper";
 
@@ -121,7 +120,7 @@ reportextension 87402 "wan Remittance Advice-Entries" extends "Remittance Advice
     var
         Language: Codeunit Language;
     begin
-        Vendor.Get("Vendor Ledger Entry"."Vendor No.");
+        Vendor.Get("Gen. Journal Line"."Account No.");
         CurrReport.Language := Language.GetLanguageIdOrDefault(Vendor."Language Code");
     end;
 }

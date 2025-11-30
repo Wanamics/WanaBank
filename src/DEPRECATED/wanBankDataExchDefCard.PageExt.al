@@ -1,3 +1,4 @@
+#if FALSE
 pageextension 87415 "wan Bank Data Exch Def Card" extends "Data Exch Def Card"
 {
     layout
@@ -8,3 +9,4 @@ pageextension 87415 "wan Bank Data Exch Def Card" extends "Data Exch Def Card"
         }
     }
 }
+#endif
