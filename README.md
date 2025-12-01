@@ -2,7 +2,7 @@
 
 Cette extension regroupe plusieurs fonctionnalités relatives aux relations bancaires ou relevant des paiements et des règlements.
 
-![WanaBank](docs/assets/WanaBank.png)
+![WanaBank](images/WanaBank.png)
 
 ### Sommaire
 - [Feuille rapprochement](#feuille-rapprochement)
@@ -17,12 +17,12 @@ Cette extension regroupe plusieurs fonctionnalités relatives aux relations banc
   - [Export des fichiers de virements](#export-des-fichiers-de-virements)
   - [Avis de paiement](#avis-de-paiement)
 - [Centralisation des contreparties](#centralisation-des-contreparties)
-- [Recouvrement et mandats de prélèvements](#recouvrement-et-mandats-de-prélèvements)
+- [Mandats SEPA](#mandats-sepa)
+- [Recouvrement](#recouvrement)
   - [Créer recouvrement prélèvements](#créer-recouvrement-prélèvements)
   - [Modifier lignes prélèvements](#modifier-lignes-prélèvements)
   - [Exporter un fichier de prélèvements](#exporter-un-fichier-de-prélèvements)
   - [Valider et centraliser au compte bancaire](#valider-et-centraliser-au-compte-bancaire)
-- [Mandats SEPA](#mandats-sepa)
 - [Prélèvement fractionné](#prélèvement-fractionné)
   - [Impact du fractionnement](#impact-du-fractionnement)
   - [Remarques](#remarques)
@@ -48,7 +48,7 @@ Cette action peut être ajoutée (Personnaliser) et il faudra alors choisir l’
 
 ## Etat de rapprochement bancaire
 Cet état permet de justifier le détail des écritures non rapprochées, en particulier à la date de clôture de l’exercice.
-![Etat de rapprochement bancaire](docs/assets/etat-de-rapprochement-bancaire.png)
+![Etat de rapprochement bancaire](images/etat-de-rapprochement-bancaire.png)
 
 ## Balance des comptes bancaires
 La version standard propose un grand livre des comptes bancaires (basé sur les **Ecritures compta. compte bancaire** et non le **Écritures comptabilité**), mais ne dispose pas de la balance correspondante.
@@ -58,25 +58,25 @@ Certes, un compte général distinct est souvent associé à chaque compte banca
 Si en revanche vous avez souhaité préserver un plan comptable simplifié sans le polluer de comptes pouvant différer d’une société à l’autre, vous avez opté pour un compte centralisateur.
 
 Cette balance vous sera alors utile.
-![Balance des comptes bancaires](docs/assets/balance-des-comptes-bancaires.png)
+![Balance des comptes bancaires](images/balance-des-comptes-bancaires.png)
 
 ## Feuille règlement
 ### Remise de chèques
 La colonne **N° doc. externe** est ajoutée pour permettre d’annoter le N° chèque.
 
 Ce dernier est repris sur la remise de chèque (propre à la localisation française), ainsi que le nombre de chèque :
-![Bordereau de remise](docs/assets/bordereau-de-remise.png)
+![Bordereau de remise](images/bordereau-de-remise.png)
 
 La présentation d’état doit être configurée à cet effet :
-![Présentation du bordereau de de remise](docs/assets/presentation-du-bordereau-de-remise.png)
+![Présentation du bordereau de de remise](images/presentation-du-bordereau-de-remise.png)
 
 ## Feuille paiements
 ### IBAN des bénéficiaires
 L’**IBAN** est ajouté à la liste (DropDownList)
-![Liste des comptes bancaires](docs/assets/liste-des-comptes-bancaires.png)
+![Liste des comptes bancaires](images/liste-des-comptes-bancaires.png)
 
 De même, le cartouche (FactBox) est complété de l’**IBAN** :
-![Cartouche IBAN](docs/assets/cartouche-iban.png)
+![Cartouche IBAN](images/cartouche-iban.png)
 
 ### Export des fichiers de virements
 Les fichiers générés pour les virements SEPA sont par défaut enregistrés dans le dossier Téléchargement de l’utilisateur.
@@ -84,19 +84,19 @@ Les fichiers générés pour les virements SEPA sont par défaut enregistrés da
 Dans le cas d’une installation sur vos serveurs (On Premise), l’extension WanaPort permet de les enregistrer automatiquement dans un dossier dédié.
 
 Par exemple :
-![Export des fichiers de virements](docs/assets/export-des-fichiers-de-virements.png)
+![Export des fichiers de virements](images/export-des-fichiers-de-virements.png)
 
 ### Avis de paiement
 Un avis de paiement peut être adressé au fournisseur (imprimé ou par e-mail) pour justifier le détail du paiement :
-![Envoyer avis de paiement](docs/assets/envoyer-avis-de-paiement.png)
+![Envoyer avis de paiement](images/envoyer-avis-de-paiement.png)
 
-![Avis de paiement](docs/assets/avis-de-paiement.png)
+![Avis de paiement](images/avis-de-paiement.png)
 
 Il est obtenu depuis la feuille de paiements (avant validation, report 399) ou depuis les **Ecritures comptables fournisseur** (après validation, report 400).
 
 Des modèles Word (Word Layout) proposés à cet effet pourront être configurés via la **Sélection présentation états** :
 
-![Présentation avis de paiement](docs/assets/presentation-avis-de-paiement.png)
+![Présentation avis de paiement](images/presentation-avis-de-paiement.png)
 
 **Remarques**
 * La version standard permet d’imprimer ces états mais l’envoi par e-mail n’est pas proposé.
@@ -116,13 +116,13 @@ Veillez à leur attribuer un nom explicite pour les utiliser à bon escient !
 
 ## Mandats SEPA
 Il peut être imprimé depuis un **Compte bancaire client** (même si le compte, et donc l’IBAN, n’est pas encore connu) :
-![Mandat SEPA](docs/assets/mandat-sepa.png)
+![Mandat SEPA](images/mandat-sepa.png)
 Il s’agit d’une présentation Word (Word Layout) personnalisable si nécessaire (la présentation proposée est celle d’un mandat SEPA de type *Core* et devra donc être adaptée en cas de mandat *B2B*).
 
 La liste des mandats est complétée du volet permettant d’associer des pièces jointes.
 
 Une fois signé, le mandat pourra ainsi y être attaché :
-![Mandat en document joint](docs/assets/mandat-en-document-joint.png)
+![Mandat en document joint](images/mandat-en-document-joint.png)
 
 ## Recouvrement
 ### Créer recouvrement prélèvements
@@ -170,10 +170,10 @@ Cette dernière pourra également mentionner les dates de prélèvements.
 La liste des modes de règlement est complétée d’une colonne 
 
 **Fractionnements prélèvement** indiquant le nombre de fractionnement complémentaire (en plus du prélèvement initial).
-![Fractionnement](docs/assets/fractionnement.png)
+![Fractionnement](images/fractionnement.png)
 
 Depuis cette colonne ou via l’action **Fractionnements prélèvement**, le report d’échéance est précisé pour chaque fraction :
 
-![Détail fractionnement](docs/assets/detail-fractionnement.png)
+![Détail fractionnement](images/detail-fractionnement.png)
 
 Attention : l’ajout ou la suppression d’un fractionnement alors que des prélèvements fractionnés ont déjà été émis aurait un impact sur les suivants.
