@@ -102,10 +102,8 @@ xmlport 87402 "wan Bank Rec. Import CFONB000"
                     MinOccurs = Zero;
                 }
                 trigger OnBeforeInsertRecord()
-                var
-                    lRetour: Integer;
                 begin
-                    CASE _EntryCode OF
+                    case _EntryCode OF
                         '01':
                             StartingBalance;
                         '04':
@@ -114,7 +112,7 @@ xmlport 87402 "wan Bank Rec. Import CFONB000"
                             Details;
                         '07':
                             EndingBalance;
-                    END;
+                    end;
                 end;
             }
         }
@@ -125,10 +123,7 @@ xmlport 87402 "wan Bank Rec. Import CFONB000"
         BankAccReconciliation: Record "Bank Acc. Reconciliation";
         BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line";
         LineNo: Integer;
-        DetailLineNo: Integer;
         GeneralLedgerSetup: Record "General Ledger Setup";
-        DataExch: Record "Data Exch.";
-        DataExchField: Record "Data Exch. Field";
 
     trigger OnPreXmlPort()
     begin
@@ -146,11 +141,6 @@ xmlport 87402 "wan Bank Rec. Import CFONB000"
             BankAccount.Get(MultiCompBankAccount."No.");
             BankAccReconciliation.ChangeCompany(MultiCompBankAccount."Company Name");
             BankAccReconciliationLine.ChangeCompany(MultiCompBankAccount."Company Name");
-            DataExch.ChangeCompany(MultiCompBankAccount."Company Name");
-            if DataExch.FindLast() then;
-            DataExch."Entry No." += 1; // AutoIncrement seems to be incompatible with ChangeCompany
-            DataExch.Insert(true);
-            DataExchField.ChangeCompany(MultiCompBankAccount."Company Name");
 
             GeneralLedgerSetup.ChangeCompany(MultiCompBankAccount."Company Name");
             GeneralLedgerSetup.Get();
@@ -161,28 +151,30 @@ xmlport 87402 "wan Bank Rec. Import CFONB000"
 
     local procedure StartingBalance()
     var
-        BaknAccReconciliation: Record "Bank Acc. Reconciliation";
+        BankAccReconciliation: Record "Bank Acc. Reconciliation";
         BankAccountStatement: Record "Bank Account Statement";
-        //BalanceLastStatementErr: Label '%1 for bank account %2 of company %3 must be %4';
-        //LastBankAccReconciliationBalanceErr: Label 'Last reconciliation %1 for bank account %2 of company %3 must be %4';
-        //BankStatementDateMismatchErr: Label 'does not match the new statement starting date of company %1';
         DateOrBalanceDoesntMatchErr: Label '%1 %2 or %3 %4 doesn''t match last %5 ones %6 at %7 for Bank Account %8 in company %9.';
+        ConfirmMsg: Label 'Do tou want to continue?';
+        IsEmptyInCompanyLbl: Label 'is not defined in company %1';
     begin
+        Clear(BankAccReconciliation);
         GetBankAccount;
         if (MultiCompBankAccount."No." = BankAccReconciliation."Bank Account No.") or (MultiCompBankAccount."No." = '') then
             exit;
         BankAccReconciliation.ChangeCompany(MultiCompBankAccount."Company Name");
-        BaknAccReconciliation.SetCurrentKey("Statement Type", "Bank Account No.", "Statement Date");
+        BankAccReconciliation.SetCurrentKey("Statement Type", "Bank Account No.", "Statement Date");
         BankAccReconciliation.SetRange("Bank Account No.", MultiCompBankAccount."No.");
-        BaknAccReconciliation.SetRange("Statement Type", BankAccReconciliation."Statement Type"::"Payment Application");
+        BankAccReconciliation.SetRange("Statement Type", BankAccReconciliation."Statement Type"::"Payment Application");
         if BankAccReconciliation.FindLast() then begin
             if (BankAccReconciliation."Statement Ending Balance" <> ToAmount(_Amount, _NoOfDecimals)) or
-                (BankAccReconciliation."Statement Date" <> ToDate(_OperationDate)) then
-                Error(DateOrBalanceDoesntMatchErr,
+                // (BankAccReconciliation."Statement Date" <> ToDate(_OperationDate)) then
+                (BankAccReconciliation."Statement Date" >= ToDate(_OperationDate)) then
+                if not Confirm(DateOrBalanceDoesntMatchErr + '\' + ConfirmMsg, false,
                     BankAccReconciliation.FieldCaption("Balance Last Statement"), ToAmount(_Amount, _NoOfDecimals),
                     BankAccReconciliation.FieldCaption("Statement Date"), ToDate(_OperationDate),
                     BankAccReconciliation.TableCaption, BankAccReconciliation."Statement Ending Balance", BankAccReconciliation."Statement Date",
-                    BankAccReconciliation."Bank Account No.", MultiCompBankAccount."Company Name");
+                    BankAccReconciliation."Bank Account No.", MultiCompBankAccount."Company Name") then
+                    error('');
             BankAccReconciliationInsert(IncStr(BankAccReconciliation."Statement No."), ToDate(_OperationDate), ToAmount(_Amount, _NoOfDecimals));
         end else begin
             BankAccountStatement.ChangeCompany(MultiCompBankAccount."Company Name");
@@ -190,24 +182,26 @@ xmlport 87402 "wan Bank Rec. Import CFONB000"
             BankAccountStatement.SetRange("Bank Account No.", MultiCompBankAccount."No.");
             if BankAccountStatement.FindLast() then begin
                 if (BankAccountStatement."Statement Ending Balance" <> ToAmount(_Amount, _NoOfDecimals)) or
-                    (BankAccountStatement."Statement Date" <> ToDate(_OperationDate)) then
-                    Error(DateOrBalanceDoesntMatchErr,
+                    // (BankAccountStatement."Statement Date" <> ToDate(_OperationDate)) then
+                    (BankAccountStatement."Statement Date" >= ToDate(_OperationDate)) then
+                    if not Confirm(DateOrBalanceDoesntMatchErr + '\' + ConfirmMsg, false,
                         BankAccountStatement.FieldCaption("Balance Last Statement"), ToAmount(_Amount, _NoOfDecimals),
                         BankAccountStatement.FieldCaption("Statement Date"), ToDate(_OperationDate),
                         BankAccountStatement.TableCaption, BankAccountStatement."Statement Ending Balance", BankAccountStatement."Statement Date",
-                        BankAccountStatement."Bank Account No.", MultiCompBankAccount."Company Name");
+                        BankAccountStatement."Bank Account No.", MultiCompBankAccount."Company Name") then
+                        error('');
             end else
                 if (BankAccount."Balance Last Statement" <> ToAmount(_Amount, _NoOfDecimals)) then
-                    Error(DateOrBalanceDoesntMatchErr,
+                    if not Confirm(DateOrBalanceDoesntMatchErr + '\' + ConfirmMsg, false,
                         BankAccount.FieldCaption("Balance Last Statement"), ToAmount(_Amount, _NoOfDecimals),
                         BankAccountStatement.FieldCaption("Statement Date"), ToDate(_OperationDate),
                         BankAccount.TableCaption, BankAccount."Balance Last Statement", 0D,
-                        BankAccount."Bank Account No.", MultiCompBankAccount."Company Name");
-            //BankAccount.TestField("Last Payment Statement No.");
-            //BankAccReconciliationInsert(IncStr(BankAccount."Last Payment Statement No."), ToDate(_OperationDate), ToAmount(_Amount, _NoOfDecimals));
+                        BankAccount."Bank Account No.", MultiCompBankAccount."Company Name") then
+                        error('');
             if BankAccount."No." = '' then
                 BankAccount.Get(MultiCompBankAccount."No.");
-            BankAccount.TestField("Last Statement No.");
+            if BankAccount."Last Statement No." = '' then
+                BankAccount.FieldError("Last Statement No.", StrSubstNo(IsEmptyInCompanyLbl, MultiCompBankAccount."Company Name"));
             BankAccReconciliationInsert(IncStr(BankAccount."Last Statement No."), ToDate(_OperationDate), ToAmount(_Amount, _NoOfDecimals));
         end;
     end;
@@ -217,19 +211,16 @@ xmlport 87402 "wan Bank Rec. Import CFONB000"
         if MultiCompBankAccount."No." = '' then
             exit;
         BankAccReconciliationLine.Init();
-        BankAccReconciliationLine."Statement Type" := BankAccReconciliation."Statement Type";
-        BankAccReconciliationLine."Bank Account No." := BankAccReconciliation."Bank Account No.";
-        BankAccReconciliationLine."Statement No." := BankAccReconciliation."Statement No.";
+        BankAccReconciliationLine.Validate("Statement Type", BankAccReconciliation."Statement Type");
+        BankAccReconciliationLine.Validate("Bank Account No.", BankAccReconciliation."Bank Account No.");
+        BankAccReconciliationLine.Validate("Statement No.", BankAccReconciliation."Statement No.");
         LineNo += 1;
-        BankAccReconciliationLine."Statement Line No." := LineNo;
-        Evaluate(BankAccReconciliationLine."Transaction Date", _OperationDate);
-        BankAccReconciliationLine."Transaction Text" := _Description;
-        BankAccReconciliationLine."Statement Amount" := ToAmount(_Amount, _NoOfDecimals);
+        BankAccReconciliationLine.Validate("Statement Line No.", LineNo);
+        BankAccReconciliationLine.Validate("Transaction Date", ToDate(_OperationDate));
+        BankAccReconciliationLine.Validate("Transaction Text", _Description);
+        BankAccReconciliationLine.Validate("Statement Amount", ToAmount(_Amount, _NoOfDecimals));
         if _DocumentNo <> '0000000' then
-            BankAccReconciliationLine."Check No." := _DocumentNo;
-        BankAccReconciliationLine."Data Exch. Entry No." := DataExch."Entry No.";
-        BankAccReconciliationLine."Data Exch. Line No." := LineNo;
-        DetailLineNo := 0;
+            BankAccReconciliationLine.Validate("Check No.", _DocumentNo);
         BankAccReconciliationLine.Insert(false);
     end;
 
@@ -237,17 +228,23 @@ xmlport 87402 "wan Bank Rec. Import CFONB000"
     begin
         if MultiCompBankAccount."No." = '' then
             exit;
-        DetailLineNo += 1;
-        DataExchField.InsertRec(DataExch."Entry No.", LineNo, DetailLineNo, _Description, '');
+        BankAccReconciliationLine.Validate("Transaction Text", CopyStr(BankAccReconciliationLine."Transaction Text" + ' ' + _Description, 1, MaxStrLen(BankAccReconciliationLine."Transaction Text")));
+        BankAccReconciliationLine.Modify();
     end;
 
     local procedure EndingBalance()
+    var
+        BankAccReconciliationLine: Record "Bank Acc. Reconciliation Line";
     begin
         if MultiCompBankAccount."No." = '' then
             exit;
-        Evaluate(BankAccReconciliation."Statement Date", _OperationDate);
-        BankAccReconciliation."Statement Ending Balance" := ToAmount(_Amount, _NoOfDecimals);
-        BankAccReconciliation.Modify(true);
+        if not BankAccReconciliationLine.LinesExist(BankAccReconciliation) then
+            BankAccReconciliation.Delete()
+        else begin
+            Evaluate(BankAccReconciliation."Statement Date", _OperationDate);
+            BankAccReconciliation."Statement Ending Balance" := ToAmount(_Amount, _NoOfDecimals);
+            BankAccReconciliation.Modify(true);
+        end;
     end;
 
     local procedure ToAmount(pTextAmount: Text; pNoOfDecimals: Text) ReturnValue: Decimal
@@ -280,46 +277,7 @@ xmlport 87402 "wan Bank Rec. Import CFONB000"
         BankAccReconciliation."Statement No." := pStatementNo;
         BankAccReconciliation."Statement Date" := pStatementDate;
         BankAccReconciliation."Balance Last Statement" := pBalanceLastStatement;
-        //BankAccReconciliation.Testfield("Statement No.");
         BankAccReconciliation.TestField("Statement Date");
         BankAccReconciliation.Insert(false);
     end;
-
-    /*
-    internal procedure AllCompanies()
-    var
-        Company: Record Company;
-    begin
-        if Company.FindSet() then
-            repeat
-                FillMultiCompBankAccountForCompany(Company.Name);
-            until Company.Next() = 0;
-    end;
-
-    internal procedure OneCompany()
-    begin
-        FillMultiCompBankAccountForCompany(CompanyName);
-    end;
-
-    local procedure FillMultiCompBankAccountForCompany(pCompanyName: Text)
-    var
-        AlreadyExistsErr: Label 'Bank Account %1 of company %2 and %3 of %4 have the same %5 %6';
-    begin
-        BankAccount.ChangeCompany(pCompanyName);
-        BankAccount.SetFilter(IBAN, '<>%1', '');
-        if BankAccount.FindSet() then
-            repeat
-                MultiCompBankAccount.TransferFields(BankAccount);
-                MultiCompBankAccount."Company Name" := pCompanyName;
-                MultiCompBankAccount."Account No." := CopyStr(DelChr(BankAccount.IBAN), 5, 21);
-                if MultiCompBankAccount.Get(MultiCompBankAccount."Account No.") then
-                    Error(AlreadyExistsErr,
-                        BankAccount."No.", CompanyName,
-                        MultiCompBankAccount."No.", MultiCompBankAccount."Company Name",
-                        BankAccount.FieldCaption("IBAN"), BankAccount.IBAN);
-                MultiCompBankAccount.Insert();
-            until BankAccount.Next() = 0;
-    end;
-    */
-
 }

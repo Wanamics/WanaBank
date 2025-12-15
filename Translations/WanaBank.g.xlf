@@ -483,6 +483,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB000 - Method StartingBalance - NamedType DateOrBalanceDoesntMatchErr</note>
         </trans-unit>
+        <trans-unit id="XmlPort 1472915337 - Method 1069624050 - NamedType 2294662597" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do tou want to continue?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB000 - Method StartingBalance - NamedType ConfirmMsg</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 1472915337 - Method 1069624050 - NamedType 3275962655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>is not defined in company %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort wan Bank Rec. Import CFONB000 - Method StartingBalance - NamedType IsEmptyInCompanyLbl</note>
+        </trans-unit>
         <trans-unit id="XmlPort 580001984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Import Bank Statement</source>
           <note from="Developer" annotates="general" priority="2"></note>

@@ -2,9 +2,9 @@
   "id": "b1cd6680-be5f-4f76-b1f3-bcc213c5558f",
   "name": "WanaBank",
   "publisher": "Wanamics",
-  "version": "27.0.0.0",
+  "version": "27.0.0.1",
   "logo": "Wanamics90x90.png",
-  "runtime": "14.0",
+  "runtime": "16.0",
   "resourceExposurePolicy": 
     {
       "allowDebugging": true, 
